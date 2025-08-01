@@ -357,7 +357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BALLS
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -468,8 +468,7 @@ MonoBehaviour:
   wordPrefab: {fileID: 7006396434060399589, guid: 98492c3bab63e46408e3d051c14ecc10, type: 3}
   wordParent: {fileID: 856718184}
   baseRadius: 200
-  spacingDegrees: 30
-  maxWords: 10
+  wordSpacingDegrees: 5
 --- !u!224 &856718184
 RectTransform:
   m_ObjectHideFlags: 0
@@ -769,6 +768,7 @@ MonoBehaviour:
   inputText: {fileID: 784147076}
   slotManager: {fileID: 856718183}
   feedbackText: {fileID: 606621138}
+  DictionaryLoader: {fileID: 1841884448}
 --- !u!4 &1434106742
 Transform:
   m_ObjectHideFlags: 0
@@ -783,6 +783,50 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2015848143}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1841884447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841884449}
+  - component: {fileID: 1841884448}
+  m_Layer: 0
+  m_Name: DictionairyLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1841884448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841884447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f3496234586a347a63ee189d68f489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1841884449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841884447}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2015848139
 GameObject:
@@ -837,7 +881,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1035,3 +1079,4 @@ SceneRoots:
   - {fileID: 2015848143}
   - {fileID: 908724107}
   - {fileID: 746870781}
+  - {fileID: 1841884449}
