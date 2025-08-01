@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordSlotManager: {fileID: 856718183}
+  DictionaryLoader: {fileID: 1841884448}
 --- !u!4 &746870781
 Transform:
   m_ObjectHideFlags: 0
