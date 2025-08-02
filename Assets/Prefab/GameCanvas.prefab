@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2811538003382772147
 RectTransform:
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
     Wordy Word'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a77d942a798b4c14383067706463ceb7, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -5448181931137440081, guid: a77d942a798b4c14383067706463ceb7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2058,11 +2058,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2a48e0290a5e04bbc147811cf0cb00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCPU: 0
   wordPrefab: {fileID: 0}
   wordParent: {fileID: 0}
   baseRadius: 200
   wordSpacingDegrees: 5
-  AllUsedWords: []
+  InputManager: {fileID: 0}
+  curvedWords: []
   firstWordFirstLetter: 
 --- !u!1 &4623126814298500421
 GameObject:
