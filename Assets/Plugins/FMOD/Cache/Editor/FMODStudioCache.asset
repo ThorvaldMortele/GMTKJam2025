@@ -15,11 +15,38 @@ MonoBehaviour:
   Path: FMOD/WordLoop/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638897655192234612
+  lastModified: 638897678641399770
   FileSizes:
   - Name: Desktop
-    Value: 960
+    Value: 1042
   Exists: 1
+--- !u!114 &-4017955298731575947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UIPopUp
+  m_EditorClassIdentifier: 
+  Path: event:/UIPopUp
+  Guid:
+    Data1: -1910026585
+    Data2: 1310085039
+    Data3: 1492588959
+    Data4: -677964940
+  Banks:
+  - {fileID: -2005577492349216657}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2005577492349216657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,10 +62,10 @@ MonoBehaviour:
   Path: FMOD/WordLoop/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638897655192222618
+  lastModified: 638897678641385722
   FileSizes:
   - Name: Desktop
-    Value: 30464
+    Value: 39328
   Exists: 1
 --- !u!114 &-1061664549993384731
 MonoBehaviour:
@@ -84,12 +111,14 @@ MonoBehaviour:
   - {fileID: 7659648918901427670}
   - {fileID: 9132856237912946471}
   - {fileID: 2091031476135956209}
+  - {fileID: 5070909503876961277}
+  - {fileID: -4017955298731575947}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2005577492349216657}
   StringsBanks:
   - {fileID: -4890462348872955270}
-  cacheTime: 638897655192234612
+  cacheTime: 638897678641399770
   cacheVersion: 131625
 --- !u!114 &2091031476135956209
 MonoBehaviour:
@@ -109,6 +138,33 @@ MonoBehaviour:
     Data2: 1152225569
     Data3: 23035533
     Data4: -799479735
+  Banks:
+  - {fileID: -2005577492349216657}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5070909503876961277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/DeleteLetter
+  m_EditorClassIdentifier: 
+  Path: event:/DeleteLetter
+  Guid:
+    Data1: 437830480
+    Data2: 1271110267
+    Data3: 1541359747
+    Data4: 1073880144
   Banks:
   - {fileID: -2005577492349216657}
   IsStream: 0
