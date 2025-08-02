@@ -804,17 +804,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519160858}
   m_CullTransparentMesh: 1
---- !u!114 &1732947519 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8946174154608269716, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-  m_PrefabInstance: {fileID: 7747141332461776679}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eec1800ce3c54d4fa0c626543ba9506, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2015848139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,10 +1244,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4960960699067596176, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: inputManager
-      value: 
-      objectReference: {fileID: 1732947519}
     - target: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: inputText
       value: 
@@ -1267,10 +1252,6 @@ PrefabInstance:
       propertyPath: feedbackText
       value: 
       objectReference: {fileID: 606621138}
-    - target: {fileID: 8946174154608269716, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: IsCPU
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8946174154608269716, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: inputText
       value: 

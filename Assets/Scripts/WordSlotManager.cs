@@ -18,7 +18,7 @@ public class WordSlotManager : MonoBehaviour
 
     public int wordCount => curvedWords.Count;
 
-    private string firstWordFirstLetter = "";
+    public string firstWordFirstLetter = "";
 
     public void AddWord(string word)
     {
@@ -87,6 +87,3 @@ public class WordSlotManager : MonoBehaviour
         return latestWord.Length > 0 ? latestWord[^1].ToString().ToLower() : "";
     }
 }
-
-//each time the cpu enters a word, the odds of getting a closing loop word increases
-//have another dictionairy with simpler words (+-30k) that the ai uses
