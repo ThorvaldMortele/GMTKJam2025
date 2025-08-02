@@ -705,7 +705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &252220174
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3243,6 +3243,26 @@ PrefabInstance:
       propertyPath: feedbackText
       value: 
       objectReference: {fileID: 357909840}
+    - target: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: typingSFX.Path
+      value: event:/TypeLetter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: typingSFX.Guid.Data1
+      value: 1788490022
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: typingSFX.Guid.Data2
+      value: 1164873650
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: typingSFX.Guid.Data3
+      value: -1634390099
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: typingSFX.Guid.Data4
+      value: 1992282623
+      objectReference: {fileID: 0}
     - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: startTime
       value: 300

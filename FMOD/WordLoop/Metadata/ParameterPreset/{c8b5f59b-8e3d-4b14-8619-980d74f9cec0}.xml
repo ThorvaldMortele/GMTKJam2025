@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{c8b5f59b-8e3d-4b14-8619-980d74f9cec0}">
+		<property name="name">
+			<value>TypingCombo</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b63ec322-fc87-47d1-8805-2803efea0ea2}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8657b694-d2fd-478f-9d1c-1a97abd00c04}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8657b694-d2fd-478f-9d1c-1a97abd00c04}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>11</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
