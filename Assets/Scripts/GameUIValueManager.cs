@@ -49,15 +49,15 @@ public class GameUIValueManager : MonoBehaviour
     {
         _uiPlayerLoopCountText.text = $"Loops: {_gameManager.PlayerCompletedLoops}";
         _uiPlayerWordCountText.text = $"Words: {_gameManager.PlayerWordsCount}";
-        _uiPlayerStartLetterReminderText.text = $"Input a word starting with [{_playerSlotManager.GetLastLetter()}].";
-        _uiPlayerEndLoopLetterReminderText.text = $"End with [{_playerSlotManager.firstWordFirstLetter}] to form a loop.";
+        _uiPlayerStartLetterReminderText.text = $"Input a word starting with '{_playerSlotManager.GetLastLetter().ToUpper()}'.";
+        _uiPlayerEndLoopLetterReminderText.text = $"End with '{_playerSlotManager.firstWordFirstLetter.ToUpper()}' to form a loop.";
     }
 
     private void UpdateOpponentUI()
     {
         _uiOpponentLoopCountText.text = $"Loops: {_gameManager.CPUCompletedLoops}";
         _uiOpponentWordCountText.text = $"Words: {_gameManager.CPUWordsCount}";
-        _uiOpponentStartLetterReminderText.text = $"Input a word starting with [{_opponentSlotManager.GetLastLetter()}].";
-        _uiOpponentEndLoopLetterReminderText.text = $"End with [{_opponentSlotManager.firstWordFirstLetter}] to form a loop.";
+        _uiOpponentStartLetterReminderText.text = $"Input a word starting with '{_opponentSlotManager.GetLastLetter().ToUpper()}'.";
+        _uiOpponentEndLoopLetterReminderText.text = $"End with '{_opponentSlotManager.firstWordFirstLetter.ToUpper()}' to form a loop.";
     }
 }
