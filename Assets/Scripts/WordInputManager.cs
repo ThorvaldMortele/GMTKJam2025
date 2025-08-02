@@ -20,9 +20,11 @@ public class WordInputManager : MonoBehaviour
     public bool CanInput = false;
     public bool IsCPU = false;
 
+    [Header("Audio")]
     private int wordCombo = 0;
     public EventReference typingSFX;
     public EventReference wordInputSFX;
+    public EventReference wordInputRemovedSFX;
 
     void Update()
     {
@@ -36,6 +38,7 @@ public class WordInputManager : MonoBehaviour
                     {
                         currentInput = currentInput[..^1];
                         wordCombo--;
+                        PlayLetterRemovedSFX();
                     }
                         
                 }
@@ -161,6 +164,17 @@ public class WordInputManager : MonoBehaviour
         instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
         instance.start();
         instance.release();
+    }
+    private void PlayLetterRemovedSFX()
+    {
+        if (!IsCPU)
+        {
+            var instance = RuntimeManager.CreateInstance(wordInputRemovedSFX.Guid);
+
+            instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
+            instance.start();
+            instance.release();
+        }
     }
 
     private void PlayWordEnteredSFX()
