@@ -3237,6 +3237,18 @@ PrefabInstance:
       propertyPath: feedbackText
       value: 
       objectReference: {fileID: 357909840}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: startTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: tmpTimerText
+      value: 
+      objectReference: {fileID: 1590621460}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: resultManager
+      value: 
+      objectReference: {fileID: 1697743120}
     - target: {fileID: 8946174154608269716, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: inputText
       value: 
@@ -5478,7 +5490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1958285354
 RectTransform:
   m_ObjectHideFlags: 0
