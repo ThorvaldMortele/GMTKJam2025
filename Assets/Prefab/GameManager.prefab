@@ -132,6 +132,7 @@ Transform:
   - {fileID: 1310558198925675946}
   - {fileID: 8731821162211518429}
   - {fileID: 6728749748552398280}
+  - {fileID: 4947752082860579270}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7909425159278121814
@@ -152,11 +153,22 @@ MonoBehaviour:
   wordInputManagerCPU: {fileID: 8946174154608269716}
   DictionaryLoader: {fileID: 8931823230631955919}
   CPU: {fileID: 4960960699067596176}
+  AbilitiesContainer: {fileID: 0}
+  AbilityPrefab: {fileID: 1075603856113955719, guid: ae3a8a9896588684bacfb663589119d3, type: 3}
+  CurrentActiveAbilityCards: []
   ActiveTriggerWords: []
   AllUsedWords: []
-  PlayerCompletedLoops: 0
-  CPUCompletedLoops: 0
   StartDelay: 3
+  PlayerCompletedLoops: 0
+  PlayerWordsCount: 0
+  PlayerAbilitiesUsed: 0
+  CPUCompletedLoops: 0
+  CPUWordsCount: 0
+  CPUAbilitiesUsed: 0
+  startTime: 300
+  currentTime: 0
+  tmpTimerText: {fileID: 0}
+  resultManager: {fileID: 7504105128976028852}
 --- !u!1 &4744471348498223310
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,6 +236,20 @@ MonoBehaviour:
   currentInput: 
   CanInput: 0
   IsCPU: 1
+  typingSFX:
+    Guid:
+      Data1: 1788490022
+      Data2: 1164873650
+      Data3: -1634390099
+      Data4: 1992282623
+    Path: event:/TypeLetter
+  wordInputSFX:
+    Guid:
+      Data1: 1667327189
+      Data2: 1217360384
+      Data3: -1135492210
+      Data4: -332150368
+    Path: event:/WordEntered
 --- !u!1 &5002987365193728633
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,3 +422,69 @@ MonoBehaviour:
   currentInput: 
   CanInput: 0
   IsCPU: 0
+  typingSFX:
+    Guid:
+      Data1: 1788490022
+      Data2: 1164873650
+      Data3: -1634390099
+      Data4: 1992282623
+    Path: event:/TypeLetter
+  wordInputSFX:
+    Guid:
+      Data1: 1667327189
+      Data2: 1217360384
+      Data3: -1135492210
+      Data4: -332150368
+    Path: event:/WordEntered
+--- !u!1 &8777747517815572786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4947752082860579270}
+  - component: {fileID: 7504105128976028852}
+  m_Layer: 0
+  m_Name: ResultUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4947752082860579270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8777747517815572786}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1969675805053988271}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7504105128976028852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8777747517815572786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9860c317c2c6b7a4fbfde2564410d37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManager: {fileID: 7909425159278121814}
+  _greenOverlayColor: {r: 0.17447333, g: 0.7735849, b: 0.14960839, a: 1}
+  _redOverlayColor: {r: 0.8490566, g: 0.16420433, b: 0.16420433, a: 1}
+  _resultScreen: {fileID: 0}
+  _resultLoopsCountText: {fileID: 0}
+  _resultWordsCountText: {fileID: 0}
+  _resultAbilitiesUsedCountText: {fileID: 0}
+  _resultText: {fileID: 0}

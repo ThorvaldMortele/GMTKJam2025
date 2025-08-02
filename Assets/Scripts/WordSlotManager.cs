@@ -24,7 +24,10 @@ public class WordSlotManager : MonoBehaviour
 
     public void AddWord(string word, bool isTriggerWord)
     {
-        if (InputManager.hintText.text != "") InputManager.hintText.text = "";
+        if (InputManager.hintText != null)
+        {
+            if (InputManager.hintText.text != "") InputManager.hintText.text = "";
+        } 
 
         if (wordCount >= 1 && word[^1].ToString().ToLower() == firstWordFirstLetter.ToLower())
         {

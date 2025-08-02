@@ -580,11 +580,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2a48e0290a5e04bbc147811cf0cb00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsCPU: 0
   wordPrefab: {fileID: 0}
   wordParent: {fileID: 0}
   baseRadius: 200
   wordSpacingDegrees: 5
-  AllUsedWords: []
+  InputManager: {fileID: 0}
+  curvedWords: []
   firstWordFirstLetter: 
 --- !u!1 &244911893
 GameObject:
@@ -2139,9 +2141,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1697743120}
-        m_TargetAssemblyTypeName: ResultUIManager, Assembly-CSharp
-        m_MethodName: PlayAgain
+      - m_Target: {fileID: 1090073488}
+        m_TargetAssemblyTypeName: WordInputManager, Assembly-CSharp
+        m_MethodName: ResetLoop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3091,6 +3093,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086660113}
   m_CullTransparentMesh: 1
+--- !u!114 &1090073488 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+  m_PrefabInstance: {fileID: 1192596520}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eec1800ce3c54d4fa0c626543ba9506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1098065162
 GameObject:
   m_ObjectHideFlags: 0
@@ -3369,6 +3382,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4960960699067596176, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: DelayWhenRethinking
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960960699067596176, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: MaxDelayBetweenWords
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960960699067596176, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: MinDelayBetweenWords
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: hintText
+      value: 
+      objectReference: {fileID: 1350391527}
     - target: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: inputText
       value: 
@@ -3417,6 +3446,10 @@ PrefabInstance:
       propertyPath: wordInputSFX.Guid.Data4
       value: -332150368
       objectReference: {fileID: 0}
+    - target: {fileID: 7504105128976028852, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: startTime
       value: 300
@@ -3429,6 +3462,14 @@ PrefabInstance:
       propertyPath: resultManager
       value: 
       objectReference: {fileID: 1697743120}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: AbilitiesContainer
+      value: 
+      objectReference: {fileID: 244911894}
+    - target: {fileID: 8777747517815572786, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8946174154608269716, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: inputText
       value: 
@@ -3968,7 +4009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1350391526
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4008,9 +4049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Suggested:
-
-    Wordy Word'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

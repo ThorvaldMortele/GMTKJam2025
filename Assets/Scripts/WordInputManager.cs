@@ -70,7 +70,8 @@ public class WordInputManager : MonoBehaviour
 
     public void SetHintText(string value)
     {
-        hintText.text = value;
+        if (hintText != null)
+            hintText.text = value;
     }
 
     public void TrySubmitWord(List<string> activeTriggerWords)

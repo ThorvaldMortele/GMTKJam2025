@@ -6,6 +6,7 @@ public class FishyAbility : AbilityEffectBase
 {
     public override void Apply(WordSlotManager target, WordSlotManager own)
     {
+        if (own.IsCPU) return;
         if (target.wordCount < 1) return;
 
         string lastLetter;
