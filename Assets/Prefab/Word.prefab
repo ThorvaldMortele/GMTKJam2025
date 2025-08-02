@@ -150,5 +150,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 200
-  degreesPerLetter: 10
   centerAngle: 0
