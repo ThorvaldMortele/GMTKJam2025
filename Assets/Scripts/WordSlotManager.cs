@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
@@ -13,10 +14,23 @@ public class WordSlotManager : MonoBehaviour
     private List<CurvedWordDisplay> curvedWords = new();
     public List<string> AllUsedWords = new List<string>();
 
+    public Action OnLoopCompleted;
+
     public int wordCount => curvedWords.Count;
+
+    private string firstWordFirstLetter = "";
 
     public void AddWord(string word)
     {
+        if (wordCount >= 1 && word[^1].ToString().ToLower() == firstWordFirstLetter.ToLower())
+        {
+            Debug.Log("Loop completed!");
+            ResetChain();
+
+            OnLoopCompleted?.Invoke();
+            return;
+        }
+
         var wordObj = Instantiate(wordPrefab, wordParent);
         var curved = wordObj.GetComponent<CurvedWordDisplay>();
         curved.radius = baseRadius;
@@ -24,6 +38,9 @@ public class WordSlotManager : MonoBehaviour
 
         AllUsedWords.Add(word);
         curvedWords.Insert(0, curved);
+
+        if (wordCount == 1)
+            firstWordFirstLetter = word[0].ToString();
 
         // Start placing from 130° (left of input field), go counterclockwise
         float angleCursor = 130f;
@@ -39,6 +56,18 @@ public class WordSlotManager : MonoBehaviour
 
             angleCursor += arc / 2f + wordSpacingDegrees;
         }
+    }
+
+    public void ResetChain()
+    {
+        foreach (var wordDisplay in curvedWords)
+        {
+            if (wordDisplay != null)
+                Destroy(wordDisplay.gameObject);
+        }
+
+        curvedWords.Clear();
+        firstWordFirstLetter = "";
     }
 
     public void RemoveWord()
@@ -58,3 +87,6 @@ public class WordSlotManager : MonoBehaviour
         return latestWord.Length > 0 ? latestWord[^1].ToString().ToLower() : "";
     }
 }
+
+//each time the cpu enters a word, the odds of getting a closing loop word increases
+//have another dictionairy with simpler words (+-30k) that the ai uses
