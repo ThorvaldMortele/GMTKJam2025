@@ -1,11 +1,13 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class WordInputManager : MonoBehaviour
 {
     public TextMeshProUGUI inputText;
     public WordSlotManager slotManager;
     public TMP_Text feedbackText;
+    public DictionaryLoader DictionaryLoader;
 
     private string currentInput = "";
 
@@ -46,8 +48,7 @@ public class WordInputManager : MonoBehaviour
             }
         }
 
-        // Replace this with a real dictionary check if needed
-        if (word.Length <= 1)
+        if (word.Length <= 1 || !DictionaryLoader.IsValidWord(word))
         {
             ShowFeedback("Invalid word.");
             return;
@@ -55,7 +56,7 @@ public class WordInputManager : MonoBehaviour
 
         slotManager.AddWord(word);
         currentInput = "";
-        ShowFeedback("");
+        ShowFeedback(word + " added");
     }
 
     void ShowFeedback(string msg)
