@@ -47,7 +47,7 @@ public class GameUIValueManager : MonoBehaviour
 
     private void UpdatePlayerUI()
     {
-        _uiPlayerLoopCountText.text = $"Score: {_gameManager.PlayerCompletedLoops}";
+        _uiPlayerLoopCountText.text = $"Loops: {_gameManager.PlayerCompletedLoops}";
         _uiPlayerWordCountText.text = $"Words: {_gameManager.PlayerWordsCount}";
         _uiPlayerStartLetterReminderText.text = $"Input a word starting with [{_playerSlotManager.GetLastLetter()}].";
         _uiPlayerEndLoopLetterReminderText.text = $"End with [{_playerSlotManager.firstWordFirstLetter}] to form a loop.";
@@ -55,7 +55,7 @@ public class GameUIValueManager : MonoBehaviour
 
     private void UpdateOpponentUI()
     {
-        _uiOpponentLoopCountText.text = $"Score: {_gameManager.CPUCompletedLoops}";
+        _uiOpponentLoopCountText.text = $"Loops: {_gameManager.CPUCompletedLoops}";
         _uiOpponentWordCountText.text = $"Words: {_gameManager.CPUWordsCount}";
         _uiOpponentStartLetterReminderText.text = $"Input a word starting with [{_opponentSlotManager.GetLastLetter()}].";
         _uiOpponentEndLoopLetterReminderText.text = $"End with [{_opponentSlotManager.firstWordFirstLetter}] to form a loop.";

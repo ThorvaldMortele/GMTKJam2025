@@ -3239,7 +3239,7 @@ PrefabInstance:
       objectReference: {fileID: 357909840}
     - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: startTime
-      value: 10
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: tmpTimerText
