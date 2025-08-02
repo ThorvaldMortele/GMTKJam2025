@@ -1,7 +1,27 @@
+using System;
 using UnityEngine;
 
 public class AbilityCardText
 {
+    public enum Abilities
+    {
+        Ink,
+        Glitch,
+        Mirror,
+        Plural,
+        Scissor,
+        Swap,
+        Remove,
+        Addition,
+        Finisher,
+        Loopy,
+        Fishy,
+        Switch,
+        Flip,
+        Brainfart,
+        Minefield
+    }
+
     public const string InkName = "Ink";
     public const string InkDescription = "Opponent is inked for 5 seconds";
 
