@@ -1,3 +1,18 @@
+fishy
+ink
+glitch
+mirror
+plural
+scissor
+swap
+remove
+addition
+finisher
+loopy
+switch
+flip
+brainfart
+minefield
 a
 abandon
 ability
@@ -318,6 +333,7 @@ box
 boy
 boyfriend
 brain
+brainfart
 branch
 brand
 brave

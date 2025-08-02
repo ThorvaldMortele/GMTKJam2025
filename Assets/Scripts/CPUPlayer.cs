@@ -16,6 +16,10 @@ public class CPUPlayer : MonoBehaviour
     public float DelayWhenRethinking = 1f;
 
     public int MaxWordCountToFormLoop = 12;
+    private bool isStunned = false;
+
+    [Range(0f, 1f)]
+    public float triggerWordChance = 0.9f; // 90% chance to use a trigger word
 
     private Coroutine playRoutine;
 
@@ -31,11 +35,31 @@ public class CPUPlayer : MonoBehaviour
 
         while (true)
         {
+            if (isStunned)
+            {
+                yield return null;
+                continue;
+            }
+
             inputManager.IsCPU = true;
             inputManager.CanInput = true;
 
             string lastLetter = GetLastLetterSafe();
             string wordToType = FindValidWordStartingWith(lastLetter, inputManager.DictionaryLoader.CPUWordSet);
+
+            if (wordToType == "ImpossibleReset")
+            {
+                var startWord = GameManager.Instance.DictionaryLoader.CPUWordSet
+                .Where(w => w.Length > 1
+                     && !GameManager.Instance.AllUsedWords.Contains(w))
+                .ToList()
+                .OrderBy(_ => Random.value)
+                .FirstOrDefault();
+
+                inputManager.slotManager.ResetChain();
+                inputManager.slotManager.StartUpLoop(startWord, false);
+                yield return null;
+            }
 
             if (wordToType == null)
             {
@@ -46,6 +70,13 @@ public class CPUPlayer : MonoBehaviour
             inputManager.inputText.text = "";
             for (int i = 0; i < wordToType.Length; i++)
             {
+                if (isStunned)
+                {
+                    inputManager.feedbackText.text = "CPU: ...uhhh...";
+                    yield return null;
+                    break;
+                }
+
                 // Re-check last letter during typing
                 string currentLast = GetLastLetterSafe();
                 if (currentLast != lastLetter)
@@ -62,7 +93,7 @@ public class CPUPlayer : MonoBehaviour
                 if (i == wordToType.Length - 1)
                 {
                     inputManager.currentInput = wordToType;
-                    inputManager.TrySubmitWord();
+                    inputManager.TrySubmitWord(inputManager.ActiveTriggerWords);
 
                     yield return new WaitForSeconds(Random.Range(MinDelayBetweenWords, MaxDelayBetweenWords));
                 }
@@ -70,6 +101,20 @@ public class CPUPlayer : MonoBehaviour
 
             yield return null; // small yield before next loop
         }
+    }
+
+    public void TriggerBrainfart(float duration = 5f)
+    {
+        if (!isStunned)
+            StartCoroutine(BrainfartRoutine(duration));
+    }
+
+    private IEnumerator BrainfartRoutine(float duration)
+    {
+        isStunned = true;
+        inputManager.feedbackText.text = "CPU: ...uhhh...";
+        yield return new WaitForSeconds(duration);
+        isStunned = false;
     }
 
     private string GetLastLetterSafe()
@@ -81,10 +126,27 @@ public class CPUPlayer : MonoBehaviour
 
     private string FindValidWordStartingWith(string letter, HashSet<string> wordset)
     {
+        if (GameManager.Instance.ActiveTriggerWords != null && GameManager.Instance.ActiveTriggerWords.Count > 0)
+        {
+            if (Random.value < triggerWordChance)
+            {
+                var triggerWord = GameManager.Instance.ActiveTriggerWords
+                    .Where(w => w.StartsWith(letter))
+                    .OrderBy(_ => Random.value)
+                    .FirstOrDefault();
+
+                if (!string.IsNullOrEmpty(triggerWord))
+                {
+                    Debug.Log($"CPU: Using trigger word '{triggerWord}'");
+                    return triggerWord;
+                }
+            }
+        }
+
         var allWords = wordset
             .Where(w => w.Length > 1
                      && w.StartsWith(letter)
-                     && !inputManager.slotManager.AllUsedWords.Contains(w))
+                     && !GameManager.Instance.AllUsedWords.Contains(w))
             .ToList();
 
         if (allWords.Count == 0) return null;
@@ -108,18 +170,15 @@ public class CPUPlayer : MonoBehaviour
                 Debug.Log($"CPU: Closing loop with '{closingWord}' (chance {closeChance * 100:F0}%)");
                 return closingWord;
             }
+            else
+            {
+                return "ImpossibleReset";
+            }
         }
 
         // fallback to any valid non-closing word
         return allWords
             .OrderBy(_ => Random.value)
             .FirstOrDefault();
-
-        //return inputManager.DictionaryLoader.WordSet
-        //    .Where(w => w.Length > 1
-        //             && w.StartsWith(letter)
-        //             && !inputManager.slotManager.AllUsedWords.Contains(w))
-        //    .OrderBy(w => Random.value)
-        //    .FirstOrDefault();
     }
 }

@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class WordInputManager : MonoBehaviour
 {
@@ -8,6 +10,10 @@ public class WordInputManager : MonoBehaviour
     public WordSlotManager slotManager;
     public TMP_Text feedbackText;
     public DictionaryLoader DictionaryLoader;
+    public List<Ability> Abilities;
+    public List<string> ActiveTriggerWords = new List<string>();
+    public List<WordSlotManager> SlotManagers;
+    public TextMeshProUGUI hintText; 
 
     public string currentInput = "";
     public bool CanInput = false;
@@ -26,7 +32,7 @@ public class WordInputManager : MonoBehaviour
                 }
                 else if (c == '\n' || c == '\r') // Enter
                 {
-                    TrySubmitWord();
+                    TrySubmitWord(ActiveTriggerWords);
                 }
                 else if (char.IsLetter(c))
                 {
@@ -38,7 +44,25 @@ public class WordInputManager : MonoBehaviour
         }
     }
 
-    public void TrySubmitWord()
+    public void TriggerBrainfart(float duration = 5f)
+    {
+        StartCoroutine(BrainfartRoutine(duration));
+    }
+
+    private IEnumerator BrainfartRoutine(float duration)
+    {
+        CanInput = false;
+        feedbackText.text = "...uhhh...";
+        yield return new WaitForSeconds(duration);
+        CanInput = true;
+    }
+
+    public void SetHintText(string value)
+    {
+        hintText.text = value;
+    }
+
+    public void TrySubmitWord(List<string> activeTriggerWords)
     {
         string word = currentInput.Trim().ToLower();
         if (word.Length == 0) return;
@@ -59,15 +83,50 @@ public class WordInputManager : MonoBehaviour
             return;
         }
 
-        if (slotManager.AllUsedWords.Contains(word))
+        if (activeTriggerWords.Contains(word))
+        {
+            slotManager.AddWord(word, true);
+            currentInput = "";
+            ShowFeedback(word + " added");
+
+            var target = SlotManagers.Where(x => !x.IsCPU == IsCPU).FirstOrDefault();
+            var ability = Abilities.Where(x => x.Name.ToLower() == word).FirstOrDefault();
+
+            UseAbility(ability, target);
+            return;
+        }
+
+        if (GameManager.Instance.AllUsedWords.Contains(word))
         {
             ShowFeedback("Already used this word.");
             return;
         }
 
-        slotManager.AddWord(word);
+        slotManager.AddWord(word, false);
         currentInput = "";
         ShowFeedback(word + " added");
+    }
+
+    public void ResetLoop()
+    {
+        var startWord = GameManager.Instance.DictionaryLoader.CPUWordSet
+        .Where(w => w.Length > 1
+         && !GameManager.Instance.AllUsedWords.Contains(w))
+        .ToList()
+        .OrderBy(_ => Random.value)
+        .FirstOrDefault();
+
+        slotManager.ResetChain();
+        slotManager.StartUpLoop(startWord, false);
+    }
+
+    public void UseAbility(Ability ability, WordSlotManager target)
+    {
+        if (ability?.Effect != null)
+        {
+            ability.Effect.Apply(target, slotManager);
+            GameManager.Instance.GenerateNewTriggerWord(ability.Name);
+        }
     }
 
     private void ShowFeedback(string msg)
