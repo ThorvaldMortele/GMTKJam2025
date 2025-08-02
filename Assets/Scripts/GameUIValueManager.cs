@@ -1,3 +1,4 @@
+using DG.Tweening.Core.Easing;
 using TMPro;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ using UnityEngine;
 
 public class GameUIValueManager : MonoBehaviour
 {
+    private GameManager gameManager;
+
     [Header("Player Values")]
     public int playerLoopCount = 0;
     public int playerWordCount = 0;
@@ -31,9 +34,17 @@ public class GameUIValueManager : MonoBehaviour
     [SerializeField] private TMP_Text _uiOpponentStartLetterReminderText;
     [SerializeField] private TMP_Text _uiOpponentEndLoopLetterReminderText;
 
+    private void Awake()
+    {
+        gameManager = GetComponent<GameManager>();
+    }
 
     public void UpdateGameUIValues()
     {
+        
+
+
+
         UpdatePlayerUI();
         UpdateOpponentUI();
     }
@@ -41,6 +52,10 @@ public class GameUIValueManager : MonoBehaviour
 
     private void UpdatePlayerUI()
     {
+        playerLoopCount = gameManager.PlayerCompletedLoops;
+        playerWordCount = 0; //
+
+
         _uiPlayerLoopCountText.text = $"Score: {playerLoopCount}";
         _uiPlayerWordCountText.text = $"Words: {playerWordCount}";
         _uiPlayerStartLetterReminderText.text = $"Input a word starting with [{playerLastUsedLetter}].";
@@ -49,6 +64,9 @@ public class GameUIValueManager : MonoBehaviour
 
     private void UpdateOpponentUI()
     {
+        opponentLoopCount = gameManager.CPUCompletedLoops;
+        opponentWordCount = 0;
+
         _uiOpponentLoopCountText.text = $"Score: {opponentLoopCount}";
         _uiOpponentWordCountText.text = $"Words: {opponentWordCount}";
         _uiOpponentStartLetterReminderText.text = $"Input a word starting with [{opponentLastUsedLetter}].";
