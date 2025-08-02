@@ -54,6 +54,12 @@ public class WordInputManager : MonoBehaviour
             return;
         }
 
+        if (slotManager.AllUsedWords.Contains(word))
+        {
+            ShowFeedback("Already used this word.");
+            return;
+        }
+
         slotManager.AddWord(word);
         currentInput = "";
         ShowFeedback(word + " added");

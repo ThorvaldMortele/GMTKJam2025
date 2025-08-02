@@ -11,6 +11,8 @@ public class WordSlotManager : MonoBehaviour
     public float wordSpacingDegrees = 5f;
 
     private List<CurvedWordDisplay> curvedWords = new();
+    public List<string> AllUsedWords = new List<string>();
+
     public int wordCount => curvedWords.Count;
 
     public void AddWord(string word)
@@ -20,6 +22,7 @@ public class WordSlotManager : MonoBehaviour
         curved.radius = baseRadius;
         curved.SetWord(word, 0); // Temp angle
 
+        AllUsedWords.Add(word);
         curvedWords.Insert(0, curved);
 
         // Start placing from 130° (left of input field), go counterclockwise
@@ -36,6 +39,11 @@ public class WordSlotManager : MonoBehaviour
 
             angleCursor += arc / 2f + wordSpacingDegrees;
         }
+    }
+
+    public void RemoveWord()
+    {
+
     }
 
     private void AnimateToAngle(CurvedWordDisplay display, float angle)
