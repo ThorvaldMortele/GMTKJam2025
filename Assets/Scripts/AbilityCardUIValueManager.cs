@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AbilityCardUIValueManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _abilityNameText;
+    [SerializeField] public TMP_Text _abilityNameText;
     [SerializeField] private TMP_Text _abilityDescriptionText;
 
     public void SetCardValue(string abilityName, string abilityDescription)
