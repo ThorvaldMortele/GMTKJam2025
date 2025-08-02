@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class CPUPlayer : MonoBehaviour
     public float MinDelayBetweenWords = 0.5f;
     public float MaxDelayBetweenWords = 2f;
     public float DelayWhenRethinking = 1f;
+
+    public int MaxWordCountToFormLoop = 12;
 
     private Coroutine playRoutine;
 
@@ -32,7 +35,7 @@ public class CPUPlayer : MonoBehaviour
             inputManager.CanInput = true;
 
             string lastLetter = GetLastLetterSafe();
-            string wordToType = FindValidWordStartingWith(lastLetter);
+            string wordToType = FindValidWordStartingWith(lastLetter, inputManager.DictionaryLoader.CPUWordSet);
 
             if (wordToType == null)
             {
@@ -76,13 +79,47 @@ public class CPUPlayer : MonoBehaviour
         return inputManager.slotManager.GetLastLetter();
     }
 
-    private string FindValidWordStartingWith(string letter)
+    private string FindValidWordStartingWith(string letter, HashSet<string> wordset)
     {
-        return inputManager.DictionaryLoader.WordSet
+        var allWords = wordset
             .Where(w => w.Length > 1
                      && w.StartsWith(letter)
                      && !inputManager.slotManager.AllUsedWords.Contains(w))
-            .OrderBy(w => Random.value)
+            .ToList();
+
+        if (allWords.Count == 0) return null;
+
+        string firstLetterOfFirstWord = inputManager.slotManager.wordCount > 0
+            ? inputManager.slotManager.curvedWords[^1].textField.text[0].ToString().ToLower()
+            : "";
+
+        int count = inputManager.slotManager.wordCount;
+        float closeChance = Mathf.Clamp01(count / 10f); // up to 100% at 10+ words
+
+        bool shouldTryToClose = Random.value < closeChance;
+
+        if (shouldTryToClose)
+        {
+            string closingWord = allWords
+                .FirstOrDefault(w => w[^1].ToString().ToLower() == firstLetterOfFirstWord);
+
+            if (closingWord != null)
+            {
+                Debug.Log($"CPU: Closing loop with '{closingWord}' (chance {closeChance * 100:F0}%)");
+                return closingWord;
+            }
+        }
+
+        // fallback to any valid non-closing word
+        return allWords
+            .OrderBy(_ => Random.value)
             .FirstOrDefault();
+
+        //return inputManager.DictionaryLoader.WordSet
+        //    .Where(w => w.Length > 1
+        //             && w.StartsWith(letter)
+        //             && !inputManager.slotManager.AllUsedWords.Contains(w))
+        //    .OrderBy(w => Random.value)
+        //    .FirstOrDefault();
     }
 }

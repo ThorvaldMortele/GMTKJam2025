@@ -11,7 +11,7 @@ public class WordSlotManager : MonoBehaviour
     public float baseRadius = 200f;
     public float wordSpacingDegrees = 5f;
 
-    private List<CurvedWordDisplay> curvedWords = new();
+    public List<CurvedWordDisplay> curvedWords = new();
     public List<string> AllUsedWords = new List<string>();
 
     public Action OnLoopCompleted;

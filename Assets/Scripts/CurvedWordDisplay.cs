@@ -7,16 +7,16 @@ public class CurvedWordDisplay : MonoBehaviour
     public float radius = 200f;
     public float centerAngle = 0f;
 
-    private TextMeshProUGUI tmp;
+    public TextMeshProUGUI textField;
 
     void Awake()
     {
-        tmp = GetComponent<TextMeshProUGUI>();
+        textField = GetComponent<TextMeshProUGUI>();
     }
 
     public void SetWord(string word, float angle)
     {
-        tmp.text = word.ToUpper();
+        textField.text = word.ToUpper();
         centerAngle = angle;
         ApplyCurve();
     }
@@ -29,7 +29,7 @@ public class CurvedWordDisplay : MonoBehaviour
 
     public void ToggleWordVisible(int visible)
     {
-        tmp.alpha = visible;
+        textField.alpha = visible;
     }
 
     public float GetAngle()
@@ -39,16 +39,16 @@ public class CurvedWordDisplay : MonoBehaviour
 
     public float GetArcAngle()
     {
-        tmp.ForceMeshUpdate();
-        float width = tmp.preferredWidth;
+        textField.ForceMeshUpdate();
+        float width = textField.preferredWidth;
         return width / (2 * Mathf.PI * radius) * 360f;
     }
 
     public void ApplyCurve()
     {
-        tmp.ForceMeshUpdate();
-        TMP_TextInfo textInfo = tmp.textInfo;
-        int charCount = tmp.text.Length;
+        textField.ForceMeshUpdate();
+        TMP_TextInfo textInfo = textField.textInfo;
+        int charCount = textField.text.Length;
         if (charCount == 0) return;
 
         float arc = GetArcAngle();
@@ -73,6 +73,6 @@ public class CurvedWordDisplay : MonoBehaviour
             for (int j = 0; j < 4; j++)
                 verts[vertexIndex + j] = rot * (verts[vertexIndex + j] - charMidBaseline) + offset;
         }
-        tmp.UpdateVertexData();
+        textField.UpdateVertexData();
     }
 }

@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     private string GetNextWordForCPU()
     {
-        return DictionaryLoader.WordSet
+        return DictionaryLoader.CPUWordSet
             .Where(w => w.Length > 1)
             .OrderBy(_ => Random.value)
             .FirstOrDefault() ?? "loop";

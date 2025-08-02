@@ -53,7 +53,7 @@ public class WordInputManager : MonoBehaviour
             }
         }
 
-        if (word.Length <= 1 || !DictionaryLoader.IsValidWord(word))
+        if (word.Length <= 1 || !DictionaryLoader.IsValidWord(word, IsCPU))
         {
             ShowFeedback("Invalid word.");
             return;
