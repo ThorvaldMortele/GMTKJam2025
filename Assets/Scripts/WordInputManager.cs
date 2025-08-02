@@ -17,6 +17,7 @@ public class WordInputManager : MonoBehaviour
 
     private int wordCombo = 0;
     public EventReference typingSFX;
+    public EventReference wordInputSFX;
 
     void Update()
     {
@@ -77,6 +78,7 @@ public class WordInputManager : MonoBehaviour
         }
 
         slotManager.AddWord(word);
+        PlayWordEnteredSFX();
         currentInput = "";
         wordCombo = 0;
         ShowFeedback(word + " added");
@@ -100,5 +102,17 @@ public class WordInputManager : MonoBehaviour
         instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
         instance.start();
         instance.release();
+    }
+
+    private void PlayWordEnteredSFX()
+    {
+        if(!IsCPU)
+        {
+            var instance = RuntimeManager.CreateInstance(wordInputSFX.Guid);
+
+            instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
+            instance.start();
+            instance.release();
+        }
     }
 }
