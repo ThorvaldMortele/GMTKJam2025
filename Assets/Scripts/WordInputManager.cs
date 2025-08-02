@@ -9,31 +9,36 @@ public class WordInputManager : MonoBehaviour
     public TMP_Text feedbackText;
     public DictionaryLoader DictionaryLoader;
 
-    private string currentInput = "";
+    public string currentInput = "";
+    public bool CanInput = false;
+    public bool IsCPU = false;
 
     void Update()
     {
-        foreach (char c in Input.inputString)
+        if (CanInput && !IsCPU)
         {
-            if (c == '\b') // Backspace
+            foreach (char c in Input.inputString)
             {
-                if (currentInput.Length > 0)
-                    currentInput = currentInput[..^1];
+                if (c == '\b') // Backspace
+                {
+                    if (currentInput.Length > 0)
+                        currentInput = currentInput[..^1];
+                }
+                else if (c == '\n' || c == '\r') // Enter
+                {
+                    TrySubmitWord();
+                }
+                else if (char.IsLetter(c))
+                {
+                    currentInput += c;
+                }
             }
-            else if (c == '\n' || c == '\r') // Enter
-            {
-                TrySubmitWord();
-            }
-            else if (char.IsLetter(c))
-            {
-                currentInput += c;
-            }
-        }
 
-        inputText.text = currentInput.ToUpper();
+            inputText.text = currentInput.ToUpper();
+        }
     }
 
-    void TrySubmitWord()
+    public void TrySubmitWord()
     {
         string word = currentInput.Trim().ToLower();
         if (word.Length == 0) return;
@@ -65,7 +70,7 @@ public class WordInputManager : MonoBehaviour
         ShowFeedback(word + " added");
     }
 
-    void ShowFeedback(string msg)
+    private void ShowFeedback(string msg)
     {
         if (feedbackText != null)
             feedbackText.text = msg;
