@@ -168,7 +168,7 @@ MonoBehaviour:
   startTime: 300
   currentTime: 0
   tmpTimerText: {fileID: 0}
-  resultManager: {fileID: 7504105128976028852}
+  resultManager: {fileID: 0}
 --- !u!1 &4744471348498223310
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +250,13 @@ MonoBehaviour:
       Data3: -1135492210
       Data4: -332150368
     Path: event:/WordEntered
+  wordInputRemovedSFX:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &5002987365193728633
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,9 +305,9 @@ MonoBehaviour:
   minDelay: 0.3
   maxDelay: 0.7
   InitialStartDelay: 1
-  MinDelayBetweenWords: 2
-  MaxDelayBetweenWords: 4
-  DelayWhenRethinking: 1
+  MinDelayBetweenWords: 4
+  MaxDelayBetweenWords: 8
+  DelayWhenRethinking: 4
   MaxWordCountToFormLoop: 12
   triggerWordChance: 0.9
 --- !u!1 &6500099821541665495
@@ -436,6 +443,13 @@ MonoBehaviour:
       Data3: -1135492210
       Data4: -332150368
     Path: event:/WordEntered
+  wordInputRemovedSFX:
+    Guid:
+      Data1: 437830480
+      Data2: 1271110267
+      Data3: 1541359747
+      Data4: 1073880144
+    Path: event:/DeleteLetter
 --- !u!1 &8777747517815572786
 GameObject:
   m_ObjectHideFlags: 0
