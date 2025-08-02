@@ -512,7 +512,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244911893}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2922,6 +2922,7 @@ GameObject:
   - component: {fileID: 1697743117}
   - component: {fileID: 1697743116}
   - component: {fileID: 1697743115}
+  - component: {fileID: 1697743119}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3012,6 +3013,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1697743119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697743114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de9d7436b619de41bdcb48367a10389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLoopCount: 0
+  playerWordCount: 0
+  playerLastUsedLetter: 
+  playerLoopLetter: 
+  _uiPlayerLoopCountText: {fileID: 1169807141}
+  _uiPlayerWordCountText: {fileID: 855259708}
+  _uiPlayerStartLetterReminderText: {fileID: 88582104}
+  _uiPlayerEndLoopLetterReminderText: {fileID: 622150122}
+  opponentLoopCount: 0
+  opponentWordCount: 0
+  opponentLastUsedLetter: 
+  opponentLoopLetter: 
+  _uiOpponentLoopCountText: {fileID: 1672980371}
+  _uiOpponentWordCountText: {fileID: 995757017}
+  _uiOpponentStartLetterReminderText: {fileID: 1037872439}
+  _uiOpponentEndLoopLetterReminderText: {fileID: 41777749}
 --- !u!1 &1765625931
 GameObject:
   m_ObjectHideFlags: 0
