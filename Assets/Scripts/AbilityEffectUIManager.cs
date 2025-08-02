@@ -9,11 +9,6 @@ public class AbilityEffectUIManager : MonoBehaviour
     [SerializeField] private GameObject _opponentAbilityUI;
 
 
-
-
-
-
-
     public void InkAbilityUIEffect(bool triggeredForPlayer)
     {
         //

@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using FMODUnity;
 
 public class WordInputManager : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class WordInputManager : MonoBehaviour
     public bool CanInput = false;
     public bool IsCPU = false;
 
+    private int wordCombo = 0;
+    public EventReference typingSFX;
+    public EventReference wordInputSFX;
+
     void Update()
     {
         if (CanInput && !IsCPU)
@@ -28,7 +33,11 @@ public class WordInputManager : MonoBehaviour
                 if (c == '\b') // Backspace
                 {
                     if (currentInput.Length > 0)
+                    {
                         currentInput = currentInput[..^1];
+                        wordCombo--;
+                    }
+                        
                 }
                 else if (c == '\n' || c == '\r') // Enter
                 {
@@ -36,6 +45,8 @@ public class WordInputManager : MonoBehaviour
                 }
                 else if (char.IsLetter(c))
                 {
+                    wordCombo++;
+                    PlayTypingSFX();
                     currentInput += c;
                 }
             }
@@ -103,7 +114,10 @@ public class WordInputManager : MonoBehaviour
         }
 
         slotManager.AddWord(word, false);
+        PlayWordEnteredSFX();
+
         currentInput = "";
+        wordCombo = 0;
         ShowFeedback(word + " added");
     }
 
@@ -133,5 +147,30 @@ public class WordInputManager : MonoBehaviour
     {
         if (feedbackText != null)
             feedbackText.text = msg;
+    }
+
+    private void PlayTypingSFX()
+    {
+        if (wordCombo >= 10) //10 is maximum
+            wordCombo = 10;
+
+        var instance = RuntimeManager.CreateInstance(typingSFX.Guid);
+        instance.setParameterByName("parameter:/TypingCombo", wordCombo);
+
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
+        instance.start();
+        instance.release();
+    }
+
+    private void PlayWordEnteredSFX()
+    {
+        if(!IsCPU)
+        {
+            var instance = RuntimeManager.CreateInstance(wordInputSFX.Guid);
+
+            instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
+            instance.start();
+            instance.release();
+        }
     }
 }

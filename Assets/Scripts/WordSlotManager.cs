@@ -20,7 +20,7 @@ public class WordSlotManager : MonoBehaviour
 
     public int wordCount => curvedWords.Count;
 
-    public string firstWordFirstLetter = "";
+    public string firstWordFirstLetter = ""; //First letter
 
     public void AddWord(string word, bool isTriggerWord)
     {
@@ -128,7 +128,7 @@ public class WordSlotManager : MonoBehaviour
         DOTween.To(() => display.GetAngle(), display.SetAngle, angle, 0.3f);
     }
 
-    public string GetLastLetter()
+    public string GetLastLetter() //Last Letter
     {
         if (curvedWords.Count == 0) return "";
         string latestWord = curvedWords[0].GetComponent<TextMeshProUGUI>().text.Trim();
