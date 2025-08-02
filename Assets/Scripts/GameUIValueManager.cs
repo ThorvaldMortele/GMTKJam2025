@@ -8,13 +8,12 @@ using UnityEngine;
 
 public class GameUIValueManager : MonoBehaviour
 {
-    private GameManager gameManager;
+    [SerializeField] private GameManager _gameManager;
 
     [Header("Player Values")]
-    public int playerLoopCount = 0;
-    public int playerWordCount = 0;
     public string playerLastUsedLetter = ""; //The last letter of the previous word, will be the first letter of their next word (Can change with abilities)
     public string playerLoopLetter = ""; //The letter they should finish their word with to form a loop
+    [SerializeField] private WordSlotManager _playerSlotManager;
 
     [Header("Player UI")]
     [SerializeField] private TMP_Text _uiPlayerLoopCountText;
@@ -23,10 +22,9 @@ public class GameUIValueManager : MonoBehaviour
     [SerializeField] private TMP_Text _uiPlayerEndLoopLetterReminderText;
 
     [Header("Opponent Values")]
-    public int opponentLoopCount = 0;
-    public int opponentWordCount = 0;
     public string opponentLastUsedLetter = ""; //The last letter of the previous word, will be the first letter of their next word (Can change with abilities)
     public string opponentLoopLetter = ""; //The letter they should finish their word with to form a loop
+    [SerializeField] private WordSlotManager _opponentSlotManager;
 
     [Header("Opponent UI")]
     [SerializeField] private TMP_Text _uiOpponentLoopCountText;
@@ -34,17 +32,14 @@ public class GameUIValueManager : MonoBehaviour
     [SerializeField] private TMP_Text _uiOpponentStartLetterReminderText;
     [SerializeField] private TMP_Text _uiOpponentEndLoopLetterReminderText;
 
-    private void Awake()
+    private void FixedUpdate()
     {
-        gameManager = GetComponent<GameManager>();
+        UpdateGameUIValues();
     }
+
 
     public void UpdateGameUIValues()
     {
-        
-
-
-
         UpdatePlayerUI();
         UpdateOpponentUI();
     }
@@ -52,24 +47,17 @@ public class GameUIValueManager : MonoBehaviour
 
     private void UpdatePlayerUI()
     {
-        playerLoopCount = gameManager.PlayerCompletedLoops;
-        playerWordCount = 0; //
-
-
-        _uiPlayerLoopCountText.text = $"Score: {playerLoopCount}";
-        _uiPlayerWordCountText.text = $"Words: {playerWordCount}";
-        _uiPlayerStartLetterReminderText.text = $"Input a word starting with [{playerLastUsedLetter}].";
-        _uiPlayerEndLoopLetterReminderText.text = $"End with [{playerLoopLetter}] to form a loop.";
+        _uiPlayerLoopCountText.text = $"Score: {_gameManager.PlayerCompletedLoops}";
+        _uiPlayerWordCountText.text = $"Words: {_gameManager.PlayerWordsCount}";
+        _uiPlayerStartLetterReminderText.text = $"Input a word starting with [{_playerSlotManager.GetLastLetter()}].";
+        _uiPlayerEndLoopLetterReminderText.text = $"End with [{_playerSlotManager.firstWordFirstLetter}] to form a loop.";
     }
 
     private void UpdateOpponentUI()
     {
-        opponentLoopCount = gameManager.CPUCompletedLoops;
-        opponentWordCount = 0;
-
-        _uiOpponentLoopCountText.text = $"Score: {opponentLoopCount}";
-        _uiOpponentWordCountText.text = $"Words: {opponentWordCount}";
-        _uiOpponentStartLetterReminderText.text = $"Input a word starting with [{opponentLastUsedLetter}].";
-        _uiOpponentEndLoopLetterReminderText.text = $"End with [{opponentLoopLetter}] to form a loop.";
+        _uiOpponentLoopCountText.text = $"Score: {_gameManager.CPUCompletedLoops}";
+        _uiOpponentWordCountText.text = $"Words: {_gameManager.CPUWordsCount}";
+        _uiOpponentStartLetterReminderText.text = $"Input a word starting with [{_opponentSlotManager.GetLastLetter()}].";
+        _uiOpponentEndLoopLetterReminderText.text = $"End with [{_opponentSlotManager.firstWordFirstLetter}] to form a loop.";
     }
 }

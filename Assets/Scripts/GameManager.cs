@@ -11,10 +11,20 @@ public class GameManager : MonoBehaviour
     public DictionaryLoader DictionaryLoader;
     public CPUPlayer CPU;
 
-    public int PlayerCompletedLoops = 0;
-    public int CPUCompletedLoops = 0;
-
     public float StartDelay = 3f;
+
+    [Header("Player Results")]
+    public int PlayerCompletedLoops = 0;
+    public int PlayerWordsCount = 0;
+    public int PlayerAbilitiesUsed = 0;
+
+    [Header("CPU Results")]
+    public int CPUCompletedLoops = 0;
+    public int CPUWordsCount = 0;
+    public int CPUAbilitiesUsed = 0;
+
+    [Header("Timer")]
+    public float Timer = 0f;
 
     void Start()
     {

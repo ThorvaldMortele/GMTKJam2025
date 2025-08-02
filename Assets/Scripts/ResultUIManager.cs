@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class ResultUIManager : MonoBehaviour
 {
+    [SerializeField] private GameManager _gameManager;
+
     [SerializeField] private Color _greenOverlayColor;
     [SerializeField] private Color _redOverlayColor;
 
@@ -48,9 +50,9 @@ public class ResultUIManager : MonoBehaviour
 
         //Set Values
 
-        _resultLoopsCountText.text = "Result | Result";
-        _resultWordsCountText.text = "Result | Result";
-        _resultAbilitiesUsedCountText.text = "Result | Result";
+        _resultLoopsCountText.text = $"{_gameManager.PlayerCompletedLoops} | {_gameManager.CPUCompletedLoops}";
+        _resultWordsCountText.text = $"{_gameManager.PlayerWordsCount} |  {_gameManager.CPUWordsCount}";
+        _resultAbilitiesUsedCountText.text = $"{_gameManager.PlayerAbilitiesUsed} | {_gameManager.CPUAbilitiesUsed}";
 
         _resultText.text = resultText;
         _resultText.color = resultColor;

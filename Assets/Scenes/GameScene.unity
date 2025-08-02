@@ -2338,7 +2338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &911192413
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2804,6 +2804,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037872437}
   m_CullTransparentMesh: 1
+--- !u!114 &1049688422 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+  m_PrefabInstance: {fileID: 1192596520}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10a9a94b1bfb814787ed43df5c342b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1086660113
 GameObject:
   m_ObjectHideFlags: 0
@@ -3239,6 +3250,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+--- !u!114 &1192596521 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1686269066720935105, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+  m_PrefabInstance: {fileID: 1192596520}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2a48e0290a5e04bbc147811cf0cb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1192596522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2078594590097466138, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+  m_PrefabInstance: {fileID: 1192596520}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2a48e0290a5e04bbc147811cf0cb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1241883189
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,18 +4613,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de9d7436b619de41bdcb48367a10389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLoopCount: 0
-  playerWordCount: 0
+  _gameManager: {fileID: 1049688422}
   playerLastUsedLetter: 
   playerLoopLetter: 
+  _playerSlotManager: {fileID: 1192596522}
   _uiPlayerLoopCountText: {fileID: 1169807141}
   _uiPlayerWordCountText: {fileID: 855259708}
   _uiPlayerStartLetterReminderText: {fileID: 88582104}
   _uiPlayerEndLoopLetterReminderText: {fileID: 622150122}
-  opponentLoopCount: 0
-  opponentWordCount: 0
   opponentLastUsedLetter: 
   opponentLoopLetter: 
+  _opponentSlotManager: {fileID: 1192596521}
   _uiOpponentLoopCountText: {fileID: 1672980371}
   _uiOpponentWordCountText: {fileID: 995757017}
   _uiOpponentStartLetterReminderText: {fileID: 1037872439}
@@ -4608,6 +4640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9860c317c2c6b7a4fbfde2564410d37d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameManager: {fileID: 1049688422}
   _greenOverlayColor: {r: 0.30980393, g: 0.454902, b: 0.28627452, a: 1}
   _redOverlayColor: {r: 0.45098042, g: 0.28235295, b: 0.28627452, a: 1}
   _resultScreen: {fileID: 1958285353}
