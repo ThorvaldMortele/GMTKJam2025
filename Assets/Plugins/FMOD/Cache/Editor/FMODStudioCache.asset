@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: FMOD/WordLoop/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638898197125992782
+  lastModified: 638898212393256731
   FileSizes:
   - Name: Desktop
-    Value: 1264
+    Value: 1344
   Exists: 1
 --- !u!114 &-3550083123011406483
 MonoBehaviour:
@@ -65,6 +65,33 @@ MonoBehaviour:
     Data2: 1271110267
     Data3: 1541359747
     Data4: 1073880144
+  Banks:
+  - {fileID: -2005577492349216657}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2273709837195842277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GameLost
+  m_EditorClassIdentifier: 
+  Path: event:/GameLost
+  Guid:
+    Data1: 1218017219
+    Data2: 1218471143
+    Data3: -705737573
+    Data4: -1169536980
   Banks:
   - {fileID: -2005577492349216657}
   IsStream: 0
@@ -116,10 +143,10 @@ MonoBehaviour:
   Path: FMOD/WordLoop/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638898197125956262
+  lastModified: 638898212393199314
   FileSizes:
   - Name: Desktop
-    Value: 55936
+    Value: 93664
   Exists: 1
 --- !u!114 &-1386937385386727267
 MonoBehaviour:
@@ -199,12 +226,14 @@ MonoBehaviour:
   - {fileID: -2227758347490236968}
   - {fileID: -1386937385386727267}
   - {fileID: 8159912372593977598}
+  - {fileID: -2273709837195842277}
+  - {fileID: 8495554401048856550}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2005577492349216657}
   StringsBanks:
   - {fileID: -4890462348872955270}
-  cacheTime: 638898197125992782
+  cacheTime: 638898212393256731
   cacheVersion: 131625
 --- !u!114 &859600289650049722
 MonoBehaviour:
@@ -360,6 +389,33 @@ MonoBehaviour:
     Data2: 1278515470
     Data3: -2011875158
     Data4: -1693895996
+  Banks:
+  - {fileID: -2005577492349216657}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8495554401048856550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GameWon
+  m_EditorClassIdentifier: 
+  Path: event:/GameWon
+  Guid:
+    Data1: 1341585383
+    Data2: 1160897278
+    Data3: 380738729
+    Data4: -1953498008
   Banks:
   - {fileID: -2005577492349216657}
   IsStream: 0

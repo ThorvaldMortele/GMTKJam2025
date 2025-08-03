@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class UISoundManager : MonoBehaviour
 {
-
     public EventReference hoverSFX;
     public EventReference pressedSFX;
     public EventReference uiPopUpSFX;
@@ -25,7 +24,4 @@ public class UISoundManager : MonoBehaviour
         instance.start();
         instance.release();
     }
-
-
-
 }
