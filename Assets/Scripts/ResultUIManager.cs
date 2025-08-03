@@ -1,3 +1,4 @@
+using FMODUnity;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,6 +20,9 @@ public class ResultUIManager : MonoBehaviour
 
     [SerializeField] private TMP_Text _resultText;
 
+    [Header("Audio")]
+    public EventReference gameWonSFX;
+    public EventReference gameLostSFX;
 
     private void Awake()
     {
@@ -62,5 +66,22 @@ public class ResultUIManager : MonoBehaviour
     {
         var sceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void GameWonSFX()
+    {
+        var instance = RuntimeManager.CreateInstance(gameWonSFX.Guid);
+
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
+        instance.start();
+        instance.release();
+    }
+    public void GameLostSFX()
+    {
+        var instance = RuntimeManager.CreateInstance(gameLostSFX.Guid);
+
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
+        instance.start();
+        instance.release();
     }
 }

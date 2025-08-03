@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1a9a6083-f89c-4042-b0ff-da8dbf82cd9a}">
+		<property name="assetPath">
+			<value>GameJam-AbilityWoosh.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.34895691609977325</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{40bbb5c5-ebc0-4d7d-a399-379f09e2abdb}</destination>
+		</relationship>
+	</object>
+</objects>
