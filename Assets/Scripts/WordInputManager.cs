@@ -108,6 +108,8 @@ public class WordInputManager : MonoBehaviour
             var ability = Abilities.Where(x => x.Name.ToLower() == word).FirstOrDefault();
 
             UseAbility(ability, target);
+            PlayWordEnteredSFX();
+            wordCombo = 0;
             return;
         }
 
@@ -138,7 +140,7 @@ public class WordInputManager : MonoBehaviour
         slotManager.StartUpLoop(startWord, false);
     }
 
-    public void UseAbility(Ability ability, WordSlotManager target)
+    public void UseAbility(Ability ability, WordSlotManager target) //Audio
     {
         if (ability?.Effect != null)
         {
