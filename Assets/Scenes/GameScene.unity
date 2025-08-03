@@ -365,17 +365,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2445374887354658977, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_Color.b
-      value: 0.21960786
+    - target: {fileID: 2702466799248433377, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_fontSize
+      value: 17
       objectReference: {fileID: 0}
-    - target: {fileID: 2445374887354658977, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_Color.g
-      value: 0.21960786
+    - target: {fileID: 2702466799248433377, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
       objectReference: {fileID: 0}
-    - target: {fileID: 2445374887354658977, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_Color.r
-      value: 0.32156864
+    - target: {fileID: 3982395597364741922, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_fontSize
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982395597364741922, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468446756019221227, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_fontSize
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468446756019221227, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -385,14 +397,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 374915742}
-    - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: UILoopExplodeSFX
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237212967080246794, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5859515956676711502, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -481,6 +485,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 374915742}
+    - target: {fileID: 7627354137011254903, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_fontSize
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627354137011254903, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 8804685144160696400, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: _gameManager
       value: 
