@@ -365,20 +365,24 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 829781958139823381, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_text
+    - target: {fileID: 2221089733326932575, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1520501998965069885, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_text
+      objectReference: {fileID: 374915742}
+    - target: {fileID: 2990550578570020113, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 374915742}
     - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1001197256}
     - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 374915742}
+    - target: {fileID: 4617732668931853822, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 374915742}
     - target: {fileID: 5859515956676711502, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
@@ -473,10 +477,6 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 1049688422}
-    - target: {fileID: 8998298874025410224, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 9128046035904184117, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: _gameManager
       value: 
@@ -590,6 +590,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &804231884 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4935900662547986706, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+  m_PrefabInstance: {fileID: 804231874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1001197256 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
@@ -685,14 +690,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 804231880}
     - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: AbilitySlotA
-      value: 
-      objectReference: {fileID: 1793341541}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: AbilitySlotB
-      value: 
-      objectReference: {fileID: 1793341540}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: tmpTimerText
       value: 
       objectReference: {fileID: 804231883}
@@ -705,13 +702,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 804231876}
     - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: cpuStickerArea
+      propertyPath: AbilitiesContainer
       value: 
-      objectReference: {fileID: 1793341538}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: playerStickerArea
+      objectReference: {fileID: 804231884}
+    - target: {fileID: 8109822403105369983, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: speechbubbleCPUWon
       value: 
-      objectReference: {fileID: 1793341539}
+      objectReference: {fileID: 1959326630}
+    - target: {fileID: 8109822403105369983, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: speechbubbleCPULost
+      value: 
+      objectReference: {fileID: 1959326629}
+    - target: {fileID: 8109822403105369983, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: speechbubbleCPUComment
+      value: 
+      objectReference: {fileID: 1959326631}
     - target: {fileID: 8946174154608269716, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: hintText
       value: 
@@ -830,24 +835,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &1793341538 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7167573435886507504, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+--- !u!1 &1959326629 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6657579288302949550, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
   m_PrefabInstance: {fileID: 804231874}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1793341539 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8748538216027298909, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+--- !u!1 &1959326630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1339584280655786424, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
   m_PrefabInstance: {fileID: 804231874}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1793341540 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6189846895886768817, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-  m_PrefabInstance: {fileID: 804231874}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1793341541 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5060194039113099787, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+--- !u!1 &1959326631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9035160569562913911, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
   m_PrefabInstance: {fileID: 804231874}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2136099758 stripped

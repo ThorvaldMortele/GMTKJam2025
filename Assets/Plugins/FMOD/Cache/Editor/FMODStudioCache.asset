@@ -54,6 +54,32 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8001080375481229864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CPUComment/VoiceOverPreset
+  m_EditorClassIdentifier: 
+  Name: VoiceOverPreset
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2723843495
+    data2: 3030239997
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Vincent
+  - Thorvald
+  Exists: 1
 --- !u!114 &-6348331146685667014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +107,32 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-6313646559053125941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CPULost/VoiceOverPreset
+  m_EditorClassIdentifier: 
+  Name: VoiceOverPreset
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2723843495
+    data2: 3030239997
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Vincent
+  - Thorvald
+  Exists: 1
 --- !u!114 &-4890462348872955270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,11 +148,39 @@ MonoBehaviour:
   Path: FMOD/WordLoop/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638898247835306722
+  lastModified: 638898320537343318
   FileSizes:
   - Name: Desktop
-    Value: 1490
+    Value: 1672
   Exists: 1
+--- !u!114 &-3563492278966049349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CPU/CPUWon
+  m_EditorClassIdentifier: 
+  Path: event:/CPU/CPUWon
+  Guid:
+    Data1: 2111428336
+    Data2: 1202732466
+    Data3: -623488595
+    Data4: 67143765
+  Banks:
+  - {fileID: -2005577492349216657}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -28017604588564882}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3550083123011406483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,10 +277,10 @@ MonoBehaviour:
   Path: FMOD/WordLoop/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638898247835296332
+  lastModified: 638898320537293273
   FileSizes:
   - Name: Desktop
-    Value: 115616
+    Value: 404320
   Exists: 1
 --- !u!114 &-1386937385386727267
 MonoBehaviour:
@@ -253,6 +333,32 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-28017604588564882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CPUWon/VoiceOverPreset
+  m_EditorClassIdentifier: 
+  Name: VoiceOverPreset
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2723843495
+    data2: 3030239997
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Vincent
+  - Thorvald
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,13 +391,44 @@ MonoBehaviour:
   - {fileID: -6348331146685667014}
   - {fileID: -8318728937377051315}
   - {fileID: 4678465179718093710}
+  - {fileID: 1582671555789215110}
+  - {fileID: 89463749622485811}
+  - {fileID: -3563492278966049349}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2005577492349216657}
   StringsBanks:
   - {fileID: -4890462348872955270}
-  cacheTime: 638898247835306722
+  cacheTime: 638898320537343318
   cacheVersion: 131625
+--- !u!114 &89463749622485811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CPU/CPUComment
+  m_EditorClassIdentifier: 
+  Path: event:/CPU/CPUComment
+  Guid:
+    Data1: -1632351585
+    Data2: 1240676280
+    Data3: 1532523453
+    Data4: -2147001723
+  Banks:
+  - {fileID: -2005577492349216657}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -8001080375481229864}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &859600289650049722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +453,34 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1582671555789215110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CPU/CPULost
+  m_EditorClassIdentifier: 
+  Path: event:/CPU/CPULost
+  Guid:
+    Data1: -1213535147
+    Data2: 1150790196
+    Data3: -1195725696
+    Data4: -580612827
+  Banks:
+  - {fileID: -2005577492349216657}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -6313646559053125941}
   MinDistance: 1
   MaxDistance: 20
   Length: 0

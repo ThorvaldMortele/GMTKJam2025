@@ -14,8 +14,9 @@ public class ResultUIManager : MonoBehaviour
     [SerializeField] private GameObject _resultScreen;
 
     [Header("Result Values")]
+    [SerializeField] private TMP_Text _resultScoreCountText;
     [SerializeField] private TMP_Text _resultLoopsCountText;
-    [SerializeField] private TMP_Text _resultWordsCountText;
+    [SerializeField] private TMP_Text _resultChainsCountText;
     [SerializeField] private TMP_Text _resultAbilitiesUsedCountText;
 
     [SerializeField] private TMP_Text _resultText;
@@ -54,8 +55,9 @@ public class ResultUIManager : MonoBehaviour
 
         //Set Values
 
-        _resultLoopsCountText.text = $"{_gameManager.PlayerCompletedLoops} | {_gameManager.CPUCompletedLoops}";
-        _resultWordsCountText.text = $"{_gameManager.PlayerWordsCount} |  {_gameManager.CPUWordsCount}";
+        _resultScoreCountText.text = $"{_gameManager.PlayerScore} | {_gameManager.CPUScore}";
+        _resultLoopsCountText.text = $"{_gameManager.PlayerCompletedLoops} |  {_gameManager.CPUCompletedLoops}";
+        _resultChainsCountText.text = $"{_gameManager.PlayerCompletedChains} | {_gameManager.CPUCompletedChains}";
         _resultAbilitiesUsedCountText.text = $"{_gameManager.PlayerAbilitiesUsed} | {_gameManager.CPUAbilitiesUsed}";
 
         _resultText.text = resultText;
