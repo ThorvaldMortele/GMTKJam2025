@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     public List<AbilityCardUIValueManager> CurrentActiveAbilityCards = new List<AbilityCardUIValueManager>();
     public List<string> ActiveTriggerWords = new List<string>();
     public List<string> AllUsedWords = new List<string>();
+    public bool GameStarted = false;
 
     public float StartDelay = 3f;
 
@@ -45,6 +47,11 @@ public class GameManager : MonoBehaviour
     [Header("ResultScreen")]
     public ResultUIManager resultManager;
 
+    [Header("Countdown")]
+    public TextMeshProUGUI countdownText;
+    public float punchScale = 1.5f;
+    public float punchDuration = 0.3f;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -68,15 +75,16 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        UpdateTimer();
+        if (GameStarted)
+            UpdateTimer();
     }
 
 
     private IEnumerator LoadWords()
     {
-        yield return new WaitForSeconds(StartDelay);
-
         yield return StartCoroutine(DictionaryLoader.LoadWordsCoroutine());
+
+        yield return StartCoroutine(CountdownRoutine());
 
         wordSlotManager.AddWord(GetNextWordForPlayer(), false);
         wordSlotManagerCPU.AddWord(GetNextWordForCPU(), false);
@@ -86,6 +94,8 @@ public class GameManager : MonoBehaviour
 
     private void StartGame()
     {
+        GameStarted = true;
+
         ActiveTriggerWords = GenerateNewTriggerWords();
         wordInputManager.ActiveTriggerWords = ActiveTriggerWords;
         wordInputManagerCPU.ActiveTriggerWords = ActiveTriggerWords;
@@ -271,6 +281,44 @@ public class GameManager : MonoBehaviour
             playerWon = false;
 
         resultManager.ShowResultScreen(playerWon);
+    }
+    #endregion
+
+    #region countdown
+    private IEnumerator CountdownRoutine()
+    {
+        countdownText.gameObject.SetActive(true);
+
+        for (int i = (int)GameManager.Instance.StartDelay; i > 0; i--)
+        {
+            countdownText.text = i.ToString();
+            AnimatePunch();
+            yield return new WaitForSeconds(1f);
+        }
+
+        countdownText.text = "START!";
+        AnimatePunch();
+        yield return new WaitForSeconds(1f);
+
+        countdownText.gameObject.SetActive(false);
+    }
+
+    private void AnimatePunch()
+    {
+        countdownText.transform.DOKill(); // Stop any previous tweens
+
+        countdownText.transform.localScale = new Vector3(0.6f, 1.4f, 1f); // Stretch vertically
+        countdownText.transform.localRotation = Quaternion.Euler(0, 0, -25f); // Pre-rotate for whip effect
+
+        Sequence seq = DOTween.Sequence();
+
+        // Scale + rotate to default
+        seq.Append(countdownText.transform.DOScale(Vector3.one, 0.25f).SetEase(Ease.OutBack));
+        seq.Join(countdownText.transform.DORotate(Vector3.zero, 0.25f).SetEase(Ease.OutExpo));
+
+        // Optional secondary "wiggle"
+        seq.Append(countdownText.transform.DORotate(new Vector3(0, 0, 10f), 0.1f).SetEase(Ease.InOutSine));
+        seq.Append(countdownText.transform.DORotate(Vector3.zero, 0.1f).SetEase(Ease.InOutSine));
     }
     #endregion
 }
