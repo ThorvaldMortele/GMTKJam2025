@@ -1,3 +1,4 @@
+using System.Collections;
 using FMODUnity;
 using UnityEngine;
 
@@ -40,40 +41,44 @@ public class CPUVoiceLineManager : MonoBehaviour
     private void PlayVoiceLine(EventReference fmodEvent)
     {
         var instance = RuntimeManager.CreateInstance(fmodEvent.Guid);
-        instance.setParameterByName("parameter:/VoiceOverPreset", voiceLinesPreset);
+        instance.setParameterByName("parameter:/VoiceOverPreset", 0);
 
         instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
         instance.start();
         instance.release();
     }
 
-    public void PlayCPUWonVoiceLine()
+    public IEnumerator PlayCPUWonVoiceLine()
     {
         speechbubbleCPUWon.SetActive(true);
         //Twean pop in speechbubble
         PlayVoiceLine(cpuWonVoiceLine);
-        //Wait for 4.5seconds
+
+        yield return new WaitForSeconds(4.5f);
         //Twean pop out speechbubble
-        //speechbubbleCPUWon.SetActive(false);
+        speechbubbleCPUWon.SetActive(false);
     }
 
-    public void PlayCPULostVoiceLine()
+    public IEnumerator PlayCPULostVoiceLine()
     {
         speechbubbleCPULost.SetActive(true);
         //Twean pop in speechbubble
         PlayVoiceLine(cpuLostvoiceLine);
-        //Wait for 4seconds
+
+        yield return new WaitForSeconds(4);
         //Twean pop out speechbubble
-        //speechbubbleCPULost.SetActive(false);
+        speechbubbleCPULost.SetActive(false);
     }
 
-    public void PlayCPUCommentVoiceLine()
+    public IEnumerator PlayCPUCommentVoiceLine()
     {
         speechbubbleCPUComment.SetActive(true);
         //Twean pop in speechbubble
         PlayVoiceLine(cpuCommentsVoiceLine);
-        //Wait for 4 seconds
+
+        yield return new WaitForSeconds(4);
+
         //Twean pop out speechbubble
-        //speechbubbleCPUComment.SetActive(false);
+        speechbubbleCPUComment.SetActive(false);
     }
 }

@@ -212,6 +212,10 @@ MonoBehaviour:
   slapStickerPrefab: {fileID: 2250100839548919993, guid: cb24452b5ac41744ea2530f6dfd76de2, type: 3}
   playerStickerArea: {fileID: 0}
   cpuStickerArea: {fileID: 0}
+  DifficultySelectScreen: {fileID: 0}
+  GameplayObjects:
+  - {fileID: 0}
+  voicelinemanager: {fileID: 8109822403105369983}
 --- !u!1 &4744471348498223310
 GameObject:
   m_ObjectHideFlags: 0
