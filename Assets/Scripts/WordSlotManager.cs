@@ -14,6 +14,7 @@ public class WordSlotManager : MonoBehaviour
     public float baseRadius = 200f;
     public float wordSpacingDegrees = 5f;
     public WordInputManager InputManager;
+    public CPUPlayer CPU;
     public int MaxWordCountBeforeChainEnd = 15;
     public Color TriggerWordColorInLoop; //ADCBE7
     public Color DefaultWordColorInLoop;
@@ -119,6 +120,11 @@ public class WordSlotManager : MonoBehaviour
 
         while (true)
         {
+            if (!IsCPU)
+                InputManager.CanInput = false;
+            else
+                CPU.isStunned = true;
+
             // Track starting angle
             float startAngle = curvedWords[0].GetAngle();
 
@@ -140,6 +146,11 @@ public class WordSlotManager : MonoBehaviour
                 ResetChain();
                 if (isloop) OnLoopCompleted?.Invoke();
                 else OnChainCompleted?.Invoke();
+
+                if (!IsCPU)
+                    InputManager.CanInput = true;
+                else
+                    CPU.isStunned = false;
                 break;
             }
                 

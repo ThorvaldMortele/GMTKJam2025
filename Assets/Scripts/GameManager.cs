@@ -173,11 +173,13 @@ public class GameManager : MonoBehaviour
                 }
             case "hard":
                 {
-                    CPU.DelayWhenRethinking = 2f;
-                    CPU.MinDelayBetweenWords = 2f;
-                    CPU.MaxDelayBetweenWords = 4f;
+                    CPU.DelayWhenRethinking = 1f;
+                    CPU.MinDelayBetweenWords = 1f;
+                    CPU.MaxDelayBetweenWords = 2f;
                     CPU.InitialStartDelay = 0f;
-                    CPU.MaxWordCountToFormLoop = 12;
+                    CPU.MaxWordCountToFormLoop = 12f;
+                    CPU.minDelay = 0.1f;
+                    CPU.maxDelay = 0.3f;
                     break;
                 }
         }

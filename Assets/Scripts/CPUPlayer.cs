@@ -15,8 +15,8 @@ public class CPUPlayer : MonoBehaviour
     public float MaxDelayBetweenWords = 2f;
     public float DelayWhenRethinking = 1f;
 
-    public int MaxWordCountToFormLoop = 20;
-    private bool isStunned = false;
+    public float MaxWordCountToFormLoop = 20f;
+    public bool isStunned = false;
 
     [Range(0f, 1f)]
     public float triggerWordChance = 0.9f; // 90% chance to use a trigger word

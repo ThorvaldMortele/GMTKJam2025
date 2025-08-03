@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using FMODUnity;
+using UnityEngine.EventSystems;
 
 public class WordInputManager : MonoBehaviour
 {
@@ -131,6 +132,11 @@ public class WordInputManager : MonoBehaviour
         ShowFeedback(word + " added");
     }
 
+    public void ResetMouseClickFocus()
+    {
+        EventSystem.current.SetSelectedGameObject(inputText.gameObject);
+    }
+
     public void ResetLoop()
     {
         var startWord = GameManager.Instance.DictionaryLoader.CPUWordSet
@@ -149,6 +155,10 @@ public class WordInputManager : MonoBehaviour
         if (ability?.Effect != null)
         {
             bool slapCPU = target.IsCPU;
+
+            if (slapCPU) GameManager.Instance.PlayerAbilitiesUsed++;
+            else GameManager.Instance.CPUAbilitiesUsed++;
+
             var originCard = GameManager.Instance.CurrentActiveAbilityCards
             .FirstOrDefault(c => c._abilityNameText.text.ToLower() == ability.Name.ToLower());
 
