@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{b8a7cb1c-4021-4c7e-acc3-edfc6d69c206}">
+		<property name="name">
+			<value>VoiceOverPreset</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b63ec322-fc87-47d1-8805-2803efea0ea2}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{a8ab7ac7-65d7-4315-a05c-0d2579c835c8}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{a8ab7ac7-65d7-4315-a05c-0d2579c835c8}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Vincent</value>
+			<value>Thorvald</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

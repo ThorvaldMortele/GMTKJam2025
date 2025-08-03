@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5f051045-b38b-46c6-95f2-d9ac8379cd41}">
+		<property name="assetPath">
+			<value>VoiceLinesVincent-CPUWonVictorious.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.0492499999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{40bbb5c5-ebc0-4d7d-a399-379f09e2abdb}</destination>
+		</relationship>
+	</object>
+</objects>
