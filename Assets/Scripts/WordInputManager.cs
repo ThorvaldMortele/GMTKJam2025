@@ -25,6 +25,7 @@ public class WordInputManager : MonoBehaviour
     public EventReference typingSFX;
     public EventReference wordInputSFX;
     public EventReference wordInputRemovedSFX;
+    public EventReference abilityUsedImpactSFX;
 
     void Update()
     {
@@ -152,6 +153,7 @@ public class WordInputManager : MonoBehaviour
             .FirstOrDefault(c => c._abilityNameText.text.ToLower() == ability.Name.ToLower());
 
             GameManager.Instance.ShowAbilitySticker(ability.Name, slapCPU, originCard);
+            PlayAbilityImpactSFX();
 
             ability.Effect.Apply(target, slotManager);
             GameManager.Instance.GenerateNewTriggerWord(ability.Name);
@@ -198,5 +200,16 @@ public class WordInputManager : MonoBehaviour
             instance.start();
             instance.release();
         }
+    }
+
+    private void PlayAbilityImpactSFX()
+    {
+        //Need to play only if it is not the CPU?
+
+        var instance = RuntimeManager.CreateInstance(abilityUsedImpactSFX.Guid);
+
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
+        instance.start();
+        instance.release();
     }
 }
