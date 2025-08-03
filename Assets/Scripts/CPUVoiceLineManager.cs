@@ -23,19 +23,7 @@ public class CPUVoiceLineManager : MonoBehaviour
         speechbubbleCPULost.SetActive(false);
         speechbubbleCPUComment.SetActive(false);
 
-        //Change narrator
-        if (voiceLinesPreset == 1) //Was Thorvald
-        {
-            voiceLinesPreset = 0; //Set to Vincent
-        }
-        else if (voiceLinesPreset == 0) //Was Vincent
-        {
-            voiceLinesPreset = 1; //Set to Thorvald
-        }
-        else if (voiceLinesPreset == -1) //First time
-        {
-            voiceLinesPreset = 1; //Set to Thorvald
-        }
+        voiceLinesPreset = Random.Range(0, 2);
     }
 
     private void PlayVoiceLine(EventReference fmodEvent)
