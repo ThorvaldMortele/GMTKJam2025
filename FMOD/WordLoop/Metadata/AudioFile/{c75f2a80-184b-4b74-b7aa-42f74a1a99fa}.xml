@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c75f2a80-184b-4b74-b7aa-42f74a1a99fa}">
+		<property name="assetPath">
+			<value>VoiceLinesThorvald-YourCooked.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.9286249999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{40bbb5c5-ebc0-4d7d-a399-379f09e2abdb}</destination>
+		</relationship>
+	</object>
+</objects>
