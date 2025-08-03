@@ -96,7 +96,7 @@ MonoBehaviour:
   Path: FMOD/WordLoop/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638898244823550669
+  lastModified: 638898247835306722
   FileSizes:
   - Name: Desktop
     Value: 1490
@@ -197,7 +197,7 @@ MonoBehaviour:
   Path: FMOD/WordLoop/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638898244823500623
+  lastModified: 638898247835296332
   FileSizes:
   - Name: Desktop
     Value: 115616
@@ -290,7 +290,7 @@ MonoBehaviour:
   - {fileID: -2005577492349216657}
   StringsBanks:
   - {fileID: -4890462348872955270}
-  cacheTime: 638898244823550669
+  cacheTime: 638898247835306722
   cacheVersion: 131625
 --- !u!114 &859600289650049722
 MonoBehaviour:

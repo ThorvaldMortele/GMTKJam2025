@@ -153,7 +153,6 @@ MonoBehaviour:
   wordInputManagerCPU: {fileID: 8946174154608269716}
   DictionaryLoader: {fileID: 8931823230631955919}
   CPU: {fileID: 4960960699067596176}
-  AbilitiesContainer: {fileID: 0}
   AbilityPrefab: {fileID: 4365937166817188733, guid: 59a52e0cd67b04242879a859c7d29ed0, type: 3}
   CurrentActiveAbilityCards: []
   ActiveTriggerWords: []
@@ -177,8 +176,39 @@ MonoBehaviour:
   countdownText: {fileID: 0}
   punchScale: 1.5
   punchDuration: 0.3
+  loopScoredSFX:
+    Guid:
+      Data1: -1774098482
+      Data2: 1184966146
+      Data3: 1308093104
+      Data4: 2048667646
+    Path: event:/LoopScored
+  chainScoredSFX:
+    Guid:
+      Data1: -764198600
+      Data2: 1220360497
+      Data3: -1996599885
+      Data4: 431916572
+    Path: event:/ChainScored
+  countdownTickSFX:
+    Guid:
+      Data1: 1998777420
+      Data2: 1278515470
+      Data3: -2011875158
+      Data4: -1693895996
+    Path: event:/CountdownTick
+  countdownStartSFX:
+    Guid:
+      Data1: -525829560
+      Data2: 1196089170
+      Data3: 879376003
+      Data4: 888217764
+    Path: event:/GameStart
   AbilitySlotA: {fileID: 0}
   AbilitySlotB: {fileID: 0}
+  slapStickerPrefab: {fileID: 2250100839548919993, guid: cb24452b5ac41744ea2530f6dfd76de2, type: 3}
+  playerStickerArea: {fileID: 0}
+  cpuStickerArea: {fileID: 0}
 --- !u!1 &4744471348498223310
 GameObject:
   m_ObjectHideFlags: 0

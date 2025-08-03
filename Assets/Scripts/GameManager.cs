@@ -6,6 +6,7 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class GameManager : MonoBehaviour
 {
@@ -51,6 +52,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI countdownText;
     public float punchScale = 1.5f;
     public float punchDuration = 0.3f;
+
+    [Header("Audio")]
+    public EventReference loopScoredSFX;
+    public EventReference chainScoredSFX;
+    public EventReference countdownTickSFX;
+    public EventReference countdownStartSFX;
 
     [Header("Ability Card Slots")]
     public Transform AbilitySlotA;
@@ -208,6 +215,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerScore++;
         PlayerCompletedLoops++;
+        PlayLoopCompletedSFX();
         string next = GetNextWordForPlayer();
 
         bool istriggerword;
@@ -221,6 +229,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerScore += 0.5f;
         PlayerCompletedChains++;
+        PlayChainCompletedSFX();
         string next = GetNextWordForPlayer();
 
         bool istriggerword;
@@ -389,11 +398,13 @@ public class GameManager : MonoBehaviour
         for (int i = (int)GameManager.Instance.StartDelay; i > 0; i--)
         {
             countdownText.text = i.ToString();
+            PlayCountdownTickSFX();
             AnimatePunch();
             yield return new WaitForSeconds(1f);
         }
 
         countdownText.text = "START!";
+        PlayCountdownStartSFX();
         AnimatePunch();
         yield return new WaitForSeconds(1f);
 
@@ -417,6 +428,43 @@ public class GameManager : MonoBehaviour
         seq.Append(countdownText.transform.DORotate(new Vector3(0, 0, 10f), 0.1f).SetEase(Ease.InOutSine));
         seq.Append(countdownText.transform.DORotate(Vector3.zero, 0.1f).SetEase(Ease.InOutSine));
     }
+    #endregion
+
+    #region Audio
+
+    private void PlayLoopCompletedSFX()
+    {
+        var instance = RuntimeManager.CreateInstance(loopScoredSFX.Guid);
+
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
+        instance.start();
+        instance.release();
+    }
+    private void PlayChainCompletedSFX()
+    {
+        var instance = RuntimeManager.CreateInstance(chainScoredSFX.Guid);
+
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
+        instance.start();
+        instance.release();
+    }
+    private void PlayCountdownTickSFX()
+    {
+        var instance = RuntimeManager.CreateInstance(countdownTickSFX.Guid);
+
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
+        instance.start();
+        instance.release();
+    }
+    private void PlayCountdownStartSFX()
+    {
+        var instance = RuntimeManager.CreateInstance(countdownStartSFX.Guid);
+
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
+        instance.start();
+        instance.release();
+    }
+
     #endregion
 }
 

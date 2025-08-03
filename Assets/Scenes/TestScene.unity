@@ -888,14 +888,6 @@ PrefabInstance:
       propertyPath: playerStickerArea
       value: 
       objectReference: {fileID: 544990569}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: slapStickerPrefab
-      value: 
-      objectReference: {fileID: 2250100839548919993, guid: cb24452b5ac41744ea2530f6dfd76de2, type: 3}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: AbilitiesContainer
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8946174154608269716, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: hintText
       value: 
