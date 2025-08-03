@@ -354,6 +354,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1001197256}
+    - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetLoop
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WordInputManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5859515956676711502, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -564,6 +584,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4935900662547986706, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
   m_PrefabInstance: {fileID: 804231874}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1001197256 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+  m_PrefabInstance: {fileID: 1192596520}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eec1800ce3c54d4fa0c626543ba9506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1049688422 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
