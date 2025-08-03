@@ -17,6 +17,12 @@ public class CPUVoiceLineManager : MonoBehaviour
 
     private void Awake()
     {
+        //Set all speechbubble inactive
+        speechbubbleCPUWon.SetActive(false);
+        speechbubbleCPULost.SetActive(false);
+        speechbubbleCPUComment.SetActive(false);
+
+        //Change narrator
         if (voiceLinesPreset == 1) //Was Thorvald
         {
             voiceLinesPreset = 0; //Set to Vincent
