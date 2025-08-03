@@ -12,11 +12,12 @@ public class WordSlotManager : MonoBehaviour
     public float baseRadius = 200f;
     public float wordSpacingDegrees = 5f;
     public WordInputManager InputManager;
+    public int MaxWordCountBeforeChainEnd = 15;
 
     public List<CurvedWordDisplay> curvedWords = new();
     
-
     public Action OnLoopCompleted;
+    public Action OnChainCompleted;
 
     public int wordCount => curvedWords.Count;
 
@@ -35,6 +36,15 @@ public class WordSlotManager : MonoBehaviour
             ResetChain();
 
             OnLoopCompleted?.Invoke();
+            return;
+        }
+
+        if (wordCount > MaxWordCountBeforeChainEnd)
+        {
+            Debug.Log("Chain completed!");
+            ResetChain();
+
+            OnChainCompleted?.Invoke();
             return;
         }
 
