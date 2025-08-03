@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2811538003382772147}
   - component: {fileID: 1697064863526820832}
   - component: {fileID: 8998298874025410224}
+  - component: {fileID: 5158896318454659811}
   m_Layer: 5
   m_Name: PlayerWordSuggestionText
   m_TagString: Untagged
@@ -136,6 +137,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5158896318454659811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62333392945746706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fdc606f720a074aab430c60bf1fb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 1.1
+  popDuration: 0.3
 --- !u!1 &407756335897992756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1057,7 @@ GameObject:
   - component: {fileID: 1207448648089275461}
   - component: {fileID: 5961832562812010496}
   - component: {fileID: 7627354137011254903}
+  - component: {fileID: 6080970321679513994}
   m_Layer: 5
   m_Name: OpponentReminderText-Start
   m_TagString: Untagged
@@ -1167,6 +1183,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6080970321679513994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870192328132811596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fdc606f720a074aab430c60bf1fb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 1.1
+  popDuration: 0.3
 --- !u!1 &1919370347114332554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,6 +1480,7 @@ GameObject:
   - component: {fileID: 770345699466315045}
   - component: {fileID: 6711783472496346558}
   - component: {fileID: 8884995673219052444}
+  - component: {fileID: 2647305684069146885}
   m_Layer: 5
   m_Name: OpponentChainCounterText
   m_TagString: Untagged
@@ -1575,6 +1606,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2647305684069146885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209355880976036218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fdc606f720a074aab430c60bf1fb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 1.2
+  popDuration: 0.3
 --- !u!1 &2309013687987553143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,6 +1789,8 @@ RectTransform:
   - {fileID: 8820688208851093638}
   - {fileID: 4935900662547986706}
   - {fileID: 1151491073038770702}
+  - {fileID: 2905947872725169058}
+  - {fileID: 4913745252067037826}
   m_Father: {fileID: 8551877834537485564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2542,6 +2589,7 @@ GameObject:
   - component: {fileID: 3367435191404242659}
   - component: {fileID: 670600401172221814}
   - component: {fileID: 8687450768130526269}
+  - component: {fileID: 6497981727537558261}
   m_Layer: 5
   m_Name: PlayerChainCounterText
   m_TagString: Untagged
@@ -2667,6 +2715,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6497981727537558261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3019241159739460262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fdc606f720a074aab430c60bf1fb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 1.2
+  popDuration: 0.3
 --- !u!1 &3140783388990975918
 GameObject:
   m_ObjectHideFlags: 0
@@ -2678,6 +2740,7 @@ GameObject:
   - component: {fileID: 3990577907180786332}
   - component: {fileID: 3992760040633485062}
   - component: {fileID: 829781958139823381}
+  - component: {fileID: 7147838250489561558}
   m_Layer: 5
   m_Name: OpponentWordAlreadyUsedReminderText
   m_TagString: Untagged
@@ -2803,6 +2866,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7147838250489561558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3140783388990975918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fdc606f720a074aab430c60bf1fb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 1.1
+  popDuration: 0.3
 --- !u!1 &3448385044493209174
 GameObject:
   m_ObjectHideFlags: 0
@@ -2814,6 +2891,7 @@ GameObject:
   - component: {fileID: 6793275297569394837}
   - component: {fileID: 8816925118171351181}
   - component: {fileID: 2702466799248433377}
+  - component: {fileID: 8894217543335746289}
   m_Layer: 5
   m_Name: OpponentReminderText-Loop
   m_TagString: Untagged
@@ -2939,6 +3017,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8894217543335746289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3448385044493209174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fdc606f720a074aab430c60bf1fb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 1.1
+  popDuration: 0.3
 --- !u!1 &3530127626469551319
 GameObject:
   m_ObjectHideFlags: 0
@@ -2950,6 +3042,7 @@ GameObject:
   - component: {fileID: 7447430417198433544}
   - component: {fileID: 5075162564878168440}
   - component: {fileID: 1418938975152027393}
+  - component: {fileID: 8564122746071583205}
   m_Layer: 5
   m_Name: PlayerScoreCounterText
   m_TagString: Untagged
@@ -3075,6 +3168,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8564122746071583205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3530127626469551319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fdc606f720a074aab430c60bf1fb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 1.2
+  popDuration: 0.3
 --- !u!1 &3927132072861245823
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,6 +3279,8 @@ MonoBehaviour:
   wordSpacingDegrees: 5
   InputManager: {fileID: 0}
   MaxWordCountBeforeChainEnd: 15
+  TriggerWordColorInLoop: {r: 0, g: 0, b: 0, a: 0}
+  DefaultWordColorInLoop: {r: 0, g: 0, b: 0, a: 0}
   curvedWords: []
   firstWordFirstLetter: 
 --- !u!1 &4623126814298500421
@@ -3321,6 +3430,7 @@ GameObject:
   - component: {fileID: 7157937116177997222}
   - component: {fileID: 8073793858669771824}
   - component: {fileID: 321847083143750066}
+  - component: {fileID: 3373032310374877238}
   m_Layer: 5
   m_Name: PlayerLoopsCounterText
   m_TagString: Untagged
@@ -3446,6 +3556,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3373032310374877238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709059222586618766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fdc606f720a074aab430c60bf1fb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 1.2
+  popDuration: 0.3
 --- !u!1 &4820285204553471360
 GameObject:
   m_ObjectHideFlags: 0
@@ -3668,6 +3792,7 @@ GameObject:
   - component: {fileID: 3208344033669554939}
   - component: {fileID: 4495368840073585285}
   - component: {fileID: 6986587012180584641}
+  - component: {fileID: 5758278305706376208}
   m_Layer: 5
   m_Name: OpponentScoreCounterText
   m_TagString: Untagged
@@ -3793,6 +3918,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5758278305706376208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4896041299392259930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fdc606f720a074aab430c60bf1fb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 1.2
+  popDuration: 0.3
 --- !u!1 &4945747694333732507
 GameObject:
   m_ObjectHideFlags: 0
@@ -5367,6 +5506,7 @@ GameObject:
   - component: {fileID: 8120618756748976843}
   - component: {fileID: 319424700545346772}
   - component: {fileID: 4716127240342838691}
+  - component: {fileID: 6088079822348328040}
   m_Layer: 5
   m_Name: OpponentLoopsCounterText
   m_TagString: Untagged
@@ -5492,6 +5632,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6088079822348328040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141263558730829955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fdc606f720a074aab430c60bf1fb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 1.2
+  popDuration: 0.3
 --- !u!1 &6451842138478251334
 GameObject:
   m_ObjectHideFlags: 0
@@ -5743,7 +5897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: d1f4f21f9a72f6d45894b7bdfa5a49e7, type: 2}
   m_Color: {r: 0.32156864, g: 0.28235295, b: 0.21960786, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -5761,6 +5915,41 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6747225118854673761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4913745252067037826}
+  m_Layer: 5
+  m_Name: CardSlot2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4913745252067037826
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747225118854673761}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8819087987230545537}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -46.2}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6869656209717119654
 GameObject:
   m_ObjectHideFlags: 0
@@ -5847,6 +6036,7 @@ GameObject:
   - component: {fileID: 6880663911798575998}
   - component: {fileID: 6892335557522314366}
   - component: {fileID: 1520501998965069885}
+  - component: {fileID: 8046863882530340427}
   m_Layer: 5
   m_Name: PlayerWordAlreadyUsedReminderText
   m_TagString: Untagged
@@ -5972,6 +6162,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8046863882530340427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6889157492143274805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fdc606f720a074aab430c60bf1fb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 1.1
+  popDuration: 0.3
 --- !u!1 &6970008571150135059
 GameObject:
   m_ObjectHideFlags: 0
@@ -7415,6 +7619,41 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8035100369396212990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2905947872725169058}
+  m_Layer: 5
+  m_Name: CardSlot1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2905947872725169058
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8035100369396212990}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8819087987230545537}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 95.2}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8328163528579280629
 GameObject:
   m_ObjectHideFlags: 0
@@ -7650,6 +7889,7 @@ GameObject:
   - component: {fileID: 7826312689228371722}
   - component: {fileID: 5482943607352159352}
   - component: {fileID: 4468446756019221227}
+  - component: {fileID: 496081738808676167}
   m_Layer: 5
   m_Name: PlayerReminderText-Loop
   m_TagString: Untagged
@@ -7775,6 +8015,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &496081738808676167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8380314875451165863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fdc606f720a074aab430c60bf1fb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 1.1
+  popDuration: 0.3
 --- !u!1 &8406767624717350610
 GameObject:
   m_ObjectHideFlags: 0
@@ -7786,6 +8040,7 @@ GameObject:
   - component: {fileID: 5084449840317838508}
   - component: {fileID: 5788121964542429244}
   - component: {fileID: 3982395597364741922}
+  - component: {fileID: 3251002123921448471}
   m_Layer: 5
   m_Name: PlayerReminderText-Start
   m_TagString: Untagged
@@ -7911,6 +8166,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3251002123921448471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8406767624717350610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8fdc606f720a074aab430c60bf1fb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popScale: 1.1
+  popDuration: 0.3
 --- !u!1 &8664126718171129777
 GameObject:
   m_ObjectHideFlags: 0
