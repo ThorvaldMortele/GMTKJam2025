@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &374915742 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8170709351903319227, guid: 57444a86e78394440be7382aec35632b, type: 3}
+  m_PrefabInstance: {fileID: 8429946947992750518}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312d28983000a6047b3c85d8e41a3116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,9 +366,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1001197256}
+    - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 374915742}
+    - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UIPressedSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UISoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5859515956676711502, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -441,6 +480,34 @@ PrefabInstance:
     - target: {fileID: 5867638145216320084, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: m_Name
       value: GameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573315828510277273, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573315828510277273, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573315828510277273, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 374915742}
+    - target: {fileID: 6573315828510277273, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573315828510277273, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UIPressedSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573315828510277273, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UISoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573315828510277273, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8804685144160696400, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: _gameManager
@@ -690,6 +757,14 @@ PrefabInstance:
       value: event:/ChainScored
       objectReference: {fileID: 0}
     - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: countdownTickSFX.Path
+      value: event:/CountdownTick
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: countdownStartSFX.Path
+      value: event:/GameStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: loopScoredSFX.Guid.Data1
       value: -1774098482
       objectReference: {fileID: 0}
@@ -720,6 +795,38 @@ PrefabInstance:
     - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: chainScoredSFX.Guid.Data4
       value: 431916572
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: countdownTickSFX.Guid.Data1
+      value: 1998777420
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: countdownTickSFX.Guid.Data2
+      value: 1278515470
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: countdownTickSFX.Guid.Data3
+      value: -2011875158
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: countdownTickSFX.Guid.Data4
+      value: -1693895996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: countdownStartSFX.Guid.Data1
+      value: -525829560
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: countdownStartSFX.Guid.Data2
+      value: 1196089170
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: countdownStartSFX.Guid.Data3
+      value: 879376003
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: countdownStartSFX.Guid.Data4
+      value: 888217764
       objectReference: {fileID: 0}
     - target: {fileID: 8777747517815572786, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: m_IsActive
@@ -1035,26 +1142,6 @@ PrefabInstance:
     - target: {fileID: 4249786098104850848, guid: 57444a86e78394440be7382aec35632b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170709351903319227, guid: 57444a86e78394440be7382aec35632b, type: 3}
-      propertyPath: uiPopUpSFX.Path
-      value: event:/UIPopUp 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170709351903319227, guid: 57444a86e78394440be7382aec35632b, type: 3}
-      propertyPath: uiPopUpSFX.Guid.Data1
-      value: 1327748981
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170709351903319227, guid: 57444a86e78394440be7382aec35632b, type: 3}
-      propertyPath: uiPopUpSFX.Guid.Data2
-      value: 1296119932
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170709351903319227, guid: 57444a86e78394440be7382aec35632b, type: 3}
-      propertyPath: uiPopUpSFX.Guid.Data3
-      value: 1108380583
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170709351903319227, guid: 57444a86e78394440be7382aec35632b, type: 3}
-      propertyPath: uiPopUpSFX.Guid.Data4
-      value: 293008213
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -58,3 +58,10 @@ MonoBehaviour:
       Data3: 23035533
       Data4: -799479735
     Path: event:/ButtonPressed
+  uiPopUpSFX:
+    Guid:
+      Data1: 1327748981
+      Data2: 1296119932
+      Data3: 1108380583
+      Data4: 293008213
+    Path: event:/UIPopUp 2
