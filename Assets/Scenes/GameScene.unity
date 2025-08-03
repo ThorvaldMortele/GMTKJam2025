@@ -365,36 +365,24 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2702466799248433377, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_fontSize
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 2702466799248433377, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 3982395597364741922, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_fontSize
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 3982395597364741922, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4468446756019221227, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_fontSize
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4468446756019221227, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 17
-      objectReference: {fileID: 0}
+    - target: {fileID: 2221089733326932575, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 374915742}
+    - target: {fileID: 2990550578570020113, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 374915742}
     - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1001197256}
     - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 374915742}
+    - target: {fileID: 4617732668931853822, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 374915742}
     - target: {fileID: 5859515956676711502, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
@@ -485,14 +473,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 374915742}
-    - target: {fileID: 7627354137011254903, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_fontSize
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 7627354137011254903, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 8804685144160696400, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: _gameManager
       value: 
