@@ -395,9 +395,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8804685144160696400}
-        m_TargetAssemblyTypeName: ResultUIManager, Assembly-CSharp
-        m_MethodName: PlayAgain
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: WordInputManager, Assembly-CSharp
+        m_MethodName: ResetLoop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

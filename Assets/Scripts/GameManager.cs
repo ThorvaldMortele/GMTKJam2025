@@ -24,12 +24,16 @@ public class GameManager : MonoBehaviour
     public float StartDelay = 3f;
 
     [Header("Player Results")]
+    public float PlayerScore = 0;
     public int PlayerCompletedLoops = 0;
+    public int PlayerCompletedChains = 0;
     public int PlayerWordsCount = 0;
     public int PlayerAbilitiesUsed = 0;
 
     [Header("CPU Results")]
+    public float CPUScore = 0;
     public int CPUCompletedLoops = 0;
+    public int CPUCompletedChains = 0;
     public int CPUWordsCount = 0;
     public int CPUAbilitiesUsed = 0;
 
@@ -56,6 +60,9 @@ public class GameManager : MonoBehaviour
     {
         wordSlotManager.OnLoopCompleted = OnPlayerLoopCompleted;
         wordSlotManagerCPU.OnLoopCompleted = OnCPULoopCompleted;
+        wordSlotManager.OnChainCompleted = OnPlayerChainCompleted;
+        wordSlotManagerCPU.OnChainCompleted = OnCPUChainCompleted;
+
         StartCoroutine(LoadWords());
         SetUpTimer();
     }
@@ -71,8 +78,8 @@ public class GameManager : MonoBehaviour
 
         yield return StartCoroutine(DictionaryLoader.LoadWordsCoroutine());
 
-        wordSlotManager.AddWord("apple", false);
-        wordSlotManagerCPU.AddWord("apple", false);
+        wordSlotManager.AddWord(GetNextWordForPlayer(), false);
+        wordSlotManagerCPU.AddWord(GetNextWordForCPU(), false);
 
         StartGame();
     }
@@ -149,7 +156,21 @@ public class GameManager : MonoBehaviour
 
     private void OnPlayerLoopCompleted()
     {
+        PlayerScore++;
         PlayerCompletedLoops++;
+        string next = GetNextWordForPlayer();
+
+        bool istriggerword;
+        if (ActiveTriggerWords.Contains(next)) istriggerword = true;
+        else istriggerword = false;
+
+        wordSlotManager.AddWord(next, istriggerword);
+    }
+
+    private void OnPlayerChainCompleted()
+    {
+        PlayerScore += 0.5f;
+        PlayerCompletedChains++;
         string next = GetNextWordForPlayer();
 
         bool istriggerword;
@@ -161,9 +182,22 @@ public class GameManager : MonoBehaviour
 
     private void OnCPULoopCompleted()
     {
+        CPUScore++;
         CPUCompletedLoops++;
         string next = GetNextWordForCPU();
 
+        bool istriggerword;
+        if (ActiveTriggerWords.Contains(next)) istriggerword = true;
+        else istriggerword = false;
+
+        wordSlotManagerCPU.AddWord(next, istriggerword);
+    }
+
+    private void OnCPUChainCompleted()
+    {
+        CPUScore += 0.5f;
+        CPUCompletedChains++;
+        string next = GetNextWordForPlayer();
 
         bool istriggerword;
         if (ActiveTriggerWords.Contains(next)) istriggerword = true;
@@ -231,7 +265,7 @@ public class GameManager : MonoBehaviour
         //Check who won
         bool playerWon = false;
 
-        if (CPUCompletedLoops <= PlayerCompletedLoops)
+        if (CPUScore <= PlayerScore)
             playerWon = true;
         else
             playerWon = false;
