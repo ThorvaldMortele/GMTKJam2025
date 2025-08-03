@@ -16,8 +16,9 @@ public class GameUIValueManager : MonoBehaviour
     [SerializeField] private WordSlotManager _playerSlotManager;
 
     [Header("Player UI")]
+    [SerializeField] private TMP_Text _uiPlayerScoreCountText;
     [SerializeField] private TMP_Text _uiPlayerLoopCountText;
-    [SerializeField] private TMP_Text _uiPlayerWordCountText;
+    [SerializeField] private TMP_Text _uiPlayerChainCountText;
     [SerializeField] private TMP_Text _uiPlayerStartLetterReminderText;
     [SerializeField] private TMP_Text _uiPlayerEndLoopLetterReminderText;
 
@@ -27,8 +28,9 @@ public class GameUIValueManager : MonoBehaviour
     [SerializeField] private WordSlotManager _opponentSlotManager;
 
     [Header("Opponent UI")]
+    [SerializeField] private TMP_Text _uiOpponentScoreCountText;
     [SerializeField] private TMP_Text _uiOpponentLoopCountText;
-    [SerializeField] private TMP_Text _uiOpponentWordCountText;
+    [SerializeField] private TMP_Text _uiOpponentChainCountText;
     [SerializeField] private TMP_Text _uiOpponentStartLetterReminderText;
     [SerializeField] private TMP_Text _uiOpponentEndLoopLetterReminderText;
 
@@ -44,19 +46,19 @@ public class GameUIValueManager : MonoBehaviour
         UpdateOpponentUI();
     }
 
-
     private void UpdatePlayerUI()
     {
+        _uiPlayerScoreCountText.text = $"Score: ";
         _uiPlayerLoopCountText.text = $"Loops: {_gameManager.PlayerCompletedLoops}";
-        _uiPlayerWordCountText.text = $"Words: {_gameManager.PlayerWordsCount}";
+        _uiPlayerChainCountText.text = $"Chains: ";
+        //_uiPlayerWordCountText.text = $"Words: {_gameManager.PlayerWordsCount}";
         _uiPlayerStartLetterReminderText.text = $"Input a word starting with '{_playerSlotManager.GetLastLetter().ToUpper()}'.";
         _uiPlayerEndLoopLetterReminderText.text = $"End with '{_playerSlotManager.firstWordFirstLetter.ToUpper()}' to form a loop.";
     }
-
     private void UpdateOpponentUI()
     {
         _uiOpponentLoopCountText.text = $"Loops: {_gameManager.CPUCompletedLoops}";
-        _uiOpponentWordCountText.text = $"Words: {_gameManager.CPUWordsCount}";
+        //_uiOpponentWordCountText.text = $"Words: {_gameManager.CPUWordsCount}";
         _uiOpponentStartLetterReminderText.text = $"Input a word starting with '{_opponentSlotManager.GetLastLetter().ToUpper()}'.";
         _uiOpponentEndLoopLetterReminderText.text = $"End with '{_opponentSlotManager.firstWordFirstLetter.ToUpper()}' to form a loop.";
     }
