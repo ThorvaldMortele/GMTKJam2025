@@ -694,6 +694,26 @@ PrefabInstance:
       propertyPath: feedbackText
       value: 
       objectReference: {fileID: 804231880}
+    - target: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: abilityUsedImpactSFX.Path
+      value: event:/AbilityUsedImpact
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: abilityUsedImpactSFX.Guid.Data1
+      value: -190243323
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: abilityUsedImpactSFX.Guid.Data2
+      value: 1208997177
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: abilityUsedImpactSFX.Guid.Data3
+      value: 749926580
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848674831943434221, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: abilityUsedImpactSFX.Guid.Data4
+      value: -989878689
+      objectReference: {fileID: 0}
     - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: AbilitySlotA
       value: 
