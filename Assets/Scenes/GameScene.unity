@@ -380,6 +380,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1339584280655786424, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2221089733326932575, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -702,6 +706,10 @@ PrefabInstance:
       propertyPath: feedbackText
       value: 
       objectReference: {fileID: 804231880}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: startTime
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: AbilitySlotA
       value: 

@@ -73,6 +73,8 @@ public class GameManager : MonoBehaviour
     public GameObject DifficultySelectScreen;
     public List<GameObject> GameplayObjects;
 
+    private bool GameEnded = false;
+
     public CPUVoiceLineManager voicelinemanager;
 
     private void Awake()
@@ -107,7 +109,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator RandomCallRoutine(float totalDuration, int numberOfCalls)
     {
-        var callTimes = GenerateCallTimes(totalDuration, numberOfCalls, 4f);
+        var callTimes = GenerateCallTimes(totalDuration, numberOfCalls, 15f);
         float elapsed = 0f;
         int index = 0;
 
@@ -197,7 +199,7 @@ public class GameManager : MonoBehaviour
 
     private void StartGame()
     {
-        StartCoroutine(RandomCallRoutine(startTime, 12));
+        StartCoroutine(RandomCallRoutine(startTime, 8));
         GameStarted = true;
 
         ActiveTriggerWords = GenerateNewTriggerWords();
@@ -440,9 +442,11 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Timer has finished
-            currentTime = 0;
-            TimerFinished();
+            if (!GameEnded)
+            {
+                currentTime = 0;
+                TimerFinished();
+            }    
         }
     }
 
@@ -466,16 +470,17 @@ public class GameManager : MonoBehaviour
     {
         //Check who won
         bool playerWon = false;
+        GameEnded = true;
 
         if (CPUScore <= PlayerScore)
         {
             playerWon = true;
-            voicelinemanager.PlayCPULostVoiceLine();
+            StartCoroutine(voicelinemanager.PlayCPULostVoiceLine());
         }
         else
         {
             playerWon = false;
-            voicelinemanager.PlayCPUWonVoiceLine();
+            StartCoroutine(voicelinemanager.PlayCPUWonVoiceLine());
         }
             
         resultManager.ShowResultScreen(playerWon);
