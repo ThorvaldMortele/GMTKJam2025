@@ -20,23 +20,6 @@ public class AutoShrinkFontOnCircle : MonoBehaviour
 
     void LateUpdate()
     {
-        int charCount = tmp.textInfo.characterCount;
-        if (charCount == 0) return;
 
-        float maxAllowedSpacing = circle.m_arcDegrees / Mathf.Max(1, charCount);
-
-        float spacing = Mathf.Min(circle.m_maxDegreesPerLetter, maxAllowedSpacing);
-
-        // Calculate scale factor (proportional to spacing vs original)
-        float spacingFactor = spacing / circle.m_maxDegreesPerLetter;
-
-        float newFontSize = Mathf.Clamp(maxFontSize * spacingFactor, minFontSize, maxFontSize);
-
-        if (Mathf.Abs(tmp.fontSize - newFontSize) > 0.01f)
-        {
-            tmp.fontSize = newFontSize;
-            tmp.ForceMeshUpdate();
-            circle.ForceUpdate();
-        }
     }
 }

@@ -212,6 +212,10 @@ MonoBehaviour:
   slapStickerPrefab: {fileID: 2250100839548919993, guid: cb24452b5ac41744ea2530f6dfd76de2, type: 3}
   playerStickerArea: {fileID: 0}
   cpuStickerArea: {fileID: 0}
+  DifficultySelectScreen: {fileID: 0}
+  GameplayObjects:
+  - {fileID: 0}
+  voicelinemanager: {fileID: 8109822403105369983}
 --- !u!1 &4744471348498223310
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +304,13 @@ MonoBehaviour:
       Data3: 1541359747
       Data4: 1073880144
     Path: event:/DeleteLetter
+  abilityUsedImpactSFX:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &5002987365193728633
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +507,13 @@ MonoBehaviour:
       Data3: 1541359747
       Data4: 1073880144
     Path: event:/DeleteLetter
+  abilityUsedImpactSFX:
+    Guid:
+      Data1: -190243323
+      Data2: 1208997177
+      Data3: 749926580
+      Data4: -989878689
+    Path: event:/AbilityUsedImpact
 --- !u!1 &9014627999708873559
 GameObject:
   m_ObjectHideFlags: 0

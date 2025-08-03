@@ -70,6 +70,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform playerStickerArea;
     [SerializeField] private Transform cpuStickerArea;
 
+    public GameObject DifficultySelectScreen;
+    public List<GameObject> GameplayObjects;
+
+    public CPUVoiceLineManager voicelinemanager;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -83,20 +88,100 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        DifficultySelectScreen.SetActive(true);
+        GameplayObjects.ForEach(x => x.SetActive(false));
+
         wordSlotManager.OnLoopCompleted = OnPlayerLoopCompleted;
         wordSlotManagerCPU.OnLoopCompleted = OnCPULoopCompleted;
         wordSlotManager.OnChainCompleted = OnPlayerChainCompleted;
         wordSlotManagerCPU.OnChainCompleted = OnCPUChainCompleted;
 
-        StartCoroutine(LoadWords());
         SetUpTimer();
     }
+
     private void Update()
     {
         if (GameStarted)
             UpdateTimer();
     }
 
+    private IEnumerator RandomCallRoutine(float totalDuration, int numberOfCalls)
+    {
+        var callTimes = GenerateCallTimes(totalDuration, numberOfCalls, 4f);
+        float elapsed = 0f;
+        int index = 0;
+
+        while (elapsed < totalDuration && index < callTimes.Count)
+        {
+            elapsed += Time.deltaTime;
+
+            if (elapsed >= callTimes[index])
+            {
+                StartCoroutine(voicelinemanager.PlayCPUCommentVoiceLine());
+                index++;
+            }
+
+            yield return null;
+        }
+    }
+
+    private List<float> GenerateCallTimes(float totalDuration, int numberOfCalls, float minSpacing)
+    {
+        List<float> validTimes = new();
+        int safety = 0;
+
+        while (validTimes.Count < numberOfCalls && safety < 10000)
+        {
+            float candidate = UnityEngine.Random.Range(0f, totalDuration);
+            bool tooClose = validTimes.Any(t => Mathf.Abs(t - candidate) < minSpacing);
+
+            if (!tooClose)
+                validTimes.Add(candidate);
+
+            safety++;
+        }
+
+        validTimes.Sort();
+        return validTimes;
+    }
+
+
+    public void SelectDifficulty(string chosenDifficulty)
+    {
+        DifficultySelectScreen.SetActive(false);
+        GameplayObjects.ForEach(x => x.SetActive(true));
+
+        switch(chosenDifficulty) 
+        {
+            case "easy":
+                {
+                    CPU.DelayWhenRethinking = 5f;
+                    CPU.MinDelayBetweenWords = 6f;
+                    CPU.MaxDelayBetweenWords = 9f;
+                    CPU.InitialStartDelay = 3f;
+                    break;
+                }
+            case "medium":
+                {
+                    CPU.DelayWhenRethinking = 4f;
+                    CPU.MinDelayBetweenWords = 4f;
+                    CPU.MaxDelayBetweenWords = 8f;
+                    CPU.InitialStartDelay = 1f;
+                    break;
+                }
+            case "hard":
+                {
+                    CPU.DelayWhenRethinking = 2f;
+                    CPU.MinDelayBetweenWords = 2f;
+                    CPU.MaxDelayBetweenWords = 4f;
+                    CPU.InitialStartDelay = 0f;
+                    CPU.MaxWordCountToFormLoop = 12;
+                    break;
+                }
+        }
+
+        StartCoroutine(LoadWords());
+    }
 
     private IEnumerator LoadWords()
     {
@@ -112,6 +197,7 @@ public class GameManager : MonoBehaviour
 
     private void StartGame()
     {
+        StartCoroutine(RandomCallRoutine(startTime, 12));
         GameStarted = true;
 
         ActiveTriggerWords = GenerateNewTriggerWords();
@@ -382,10 +468,16 @@ public class GameManager : MonoBehaviour
         bool playerWon = false;
 
         if (CPUScore <= PlayerScore)
+        {
             playerWon = true;
+            voicelinemanager.PlayCPULostVoiceLine();
+        }
         else
+        {
             playerWon = false;
-
+            voicelinemanager.PlayCPUWonVoiceLine();
+        }
+            
         resultManager.ShowResultScreen(playerWon);
     }
     #endregion
