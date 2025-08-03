@@ -681,6 +681,46 @@ PrefabInstance:
       propertyPath: AbilitiesContainer
       value: 
       objectReference: {fileID: 804231884}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: loopScoredSFX.Path
+      value: event:/LoopScored
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: chainScoredSFX.Path
+      value: event:/ChainScored
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: loopScoredSFX.Guid.Data1
+      value: -1774098482
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: loopScoredSFX.Guid.Data2
+      value: 1184966146
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: loopScoredSFX.Guid.Data3
+      value: 1308093104
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: loopScoredSFX.Guid.Data4
+      value: 2048667646
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: chainScoredSFX.Guid.Data1
+      value: -764198600
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: chainScoredSFX.Guid.Data2
+      value: 1220360497
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: chainScoredSFX.Guid.Data3
+      value: -1996599885
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
+      propertyPath: chainScoredSFX.Guid.Data4
+      value: 431916572
+      objectReference: {fileID: 0}
     - target: {fileID: 8777747517815572786, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -995,6 +1035,26 @@ PrefabInstance:
     - target: {fileID: 4249786098104850848, guid: 57444a86e78394440be7382aec35632b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170709351903319227, guid: 57444a86e78394440be7382aec35632b, type: 3}
+      propertyPath: uiPopUpSFX.Path
+      value: event:/UIPopUp 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170709351903319227, guid: 57444a86e78394440be7382aec35632b, type: 3}
+      propertyPath: uiPopUpSFX.Guid.Data1
+      value: 1327748981
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170709351903319227, guid: 57444a86e78394440be7382aec35632b, type: 3}
+      propertyPath: uiPopUpSFX.Guid.Data2
+      value: 1296119932
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170709351903319227, guid: 57444a86e78394440be7382aec35632b, type: 3}
+      propertyPath: uiPopUpSFX.Guid.Data3
+      value: 1108380583
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170709351903319227, guid: 57444a86e78394440be7382aec35632b, type: 3}
+      propertyPath: uiPopUpSFX.Guid.Data4
+      value: 293008213
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

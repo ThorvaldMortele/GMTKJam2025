@@ -6,7 +6,7 @@ public class UISoundManager : MonoBehaviour
 
     public EventReference hoverSFX;
     public EventReference pressedSFX;
-
+    public EventReference uiPopUpSFX;
 
     public void UIHoverSFX()
     {

@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: FMOD/WordLoop/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638897672693722858
+  lastModified: 638898197125992782
   FileSizes:
   - Name: Desktop
-    Value: 1042
+    Value: 1264
   Exists: 1
 --- !u!114 &-3550083123011406483
 MonoBehaviour:
@@ -74,6 +74,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2227758347490236968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LoopScored
+  m_EditorClassIdentifier: 
+  Path: event:/LoopScored
+  Guid:
+    Data1: -1774098482
+    Data2: 1184966146
+    Data3: 1308093104
+    Data4: 2048667646
+  Banks:
+  - {fileID: -2005577492349216657}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2005577492349216657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,11 +116,38 @@ MonoBehaviour:
   Path: FMOD/WordLoop/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638897672693677593
+  lastModified: 638898197125956262
   FileSizes:
   - Name: Desktop
-    Value: 39328
+    Value: 55936
   Exists: 1
+--- !u!114 &-1386937385386727267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GameStart
+  m_EditorClassIdentifier: 
+  Path: event:/GameStart
+  Guid:
+    Data1: -525829560
+    Data2: 1196089170
+    Data3: 879376003
+    Data4: 888217764
+  Banks:
+  - {fileID: -2005577492349216657}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1061664549993384731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,13 +194,45 @@ MonoBehaviour:
   - {fileID: 2091031476135956209}
   - {fileID: -3550083123011406483}
   - {fileID: -8962564300292071426}
+  - {fileID: 859600289650049722}
+  - {fileID: 3052963545287463022}
+  - {fileID: -2227758347490236968}
+  - {fileID: -1386937385386727267}
+  - {fileID: 8159912372593977598}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2005577492349216657}
   StringsBanks:
   - {fileID: -4890462348872955270}
-  cacheTime: 638897672693722858
+  cacheTime: 638898197125992782
   cacheVersion: 131625
+--- !u!114 &859600289650049722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ChainScored
+  m_EditorClassIdentifier: 
+  Path: event:/ChainScored
+  Guid:
+    Data1: -764198600
+    Data2: 1220360497
+    Data3: -1996599885
+    Data4: 431916572
+  Banks:
+  - {fileID: -2005577492349216657}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2091031476135956209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +251,33 @@ MonoBehaviour:
     Data2: 1152225569
     Data3: 23035533
     Data4: -799479735
+  Banks:
+  - {fileID: -2005577492349216657}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3052963545287463022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UIPopUp 2
+  m_EditorClassIdentifier: 
+  Path: event:/UIPopUp 2
+  Guid:
+    Data1: 1327748981
+    Data2: 1296119932
+    Data3: 1108380583
+    Data4: 293008213
   Banks:
   - {fileID: -2005577492349216657}
   IsStream: 0
@@ -220,6 +333,33 @@ MonoBehaviour:
     Data2: 1217360384
     Data3: -1135492210
     Data4: -332150368
+  Banks:
+  - {fileID: -2005577492349216657}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8159912372593977598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CountdownTick
+  m_EditorClassIdentifier: 
+  Path: event:/CountdownTick
+  Guid:
+    Data1: 1998777420
+    Data2: 1278515470
+    Data3: -2011875158
+    Data4: -1693895996
   Banks:
   - {fileID: -2005577492349216657}
   IsStream: 0
