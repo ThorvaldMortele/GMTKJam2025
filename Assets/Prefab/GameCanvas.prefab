@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7411765, g: 0.6509804, b: 0.5176471, a: 1}
+  m_Color: {r: 0.32156864, g: 0.21960786, b: 0.21960786, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -409,7 +409,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UISoundManager, Assembly-CSharp
-        m_MethodName: UIPressedSFX
+        m_MethodName: UILoopExplodeSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
