@@ -39,7 +39,7 @@ public class WordSlotManager : MonoBehaviour
             return;
         }
 
-        if (wordCount > MaxWordCountBeforeChainEnd)
+        if (wordCount >= MaxWordCountBeforeChainEnd)
         {
             Debug.Log("Chain completed!");
             ResetChain();
