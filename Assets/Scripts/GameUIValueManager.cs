@@ -63,7 +63,7 @@ public class GameUIValueManager : MonoBehaviour
     {
         _uiOpponentScoreCountText.text = $"Score: {_gameManager.CPUScore}";
         _uiOpponentLoopCountText.text = $"Loops: {_gameManager.CPUCompletedLoops}";
-        _uiOpponentChainCountText.text = $"Chain: {_gameManager.CPUCompletedChains}";
+        _uiOpponentChainCountText.text = $"Chains: {_gameManager.CPUCompletedChains}";
         //_uiOpponentWordCountText.text = $"Words: {_gameManager.CPUWordsCount}";
         _uiOpponentStartLetterReminderText.text = $"Input a word starting with '{_opponentSlotManager.GetLastLetter().ToUpper()}'.";
         _uiOpponentEndLoopLetterReminderText.text = $"End with '{_opponentSlotManager.firstWordFirstLetter.ToUpper()}' to form a loop.";
