@@ -41,7 +41,7 @@ public class CPUVoiceLineManager : MonoBehaviour
     private void PlayVoiceLine(EventReference fmodEvent)
     {
         var instance = RuntimeManager.CreateInstance(fmodEvent.Guid);
-        instance.setParameterByName("parameter:/VoiceOverPreset", 0);
+        instance.setParameterByName("parameter:/VoiceOverPreset", voiceLinesPreset);
 
         instance.set3DAttributes(RuntimeUtils.To3DAttributes(this.transform));
         instance.start();

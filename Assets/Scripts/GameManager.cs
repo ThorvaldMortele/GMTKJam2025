@@ -468,10 +468,16 @@ public class GameManager : MonoBehaviour
         bool playerWon = false;
 
         if (CPUScore <= PlayerScore)
+        {
             playerWon = true;
+            voicelinemanager.PlayCPULostVoiceLine();
+        }
         else
+        {
             playerWon = false;
-
+            voicelinemanager.PlayCPUWonVoiceLine();
+        }
+            
         resultManager.ShowResultScreen(playerWon);
     }
     #endregion
