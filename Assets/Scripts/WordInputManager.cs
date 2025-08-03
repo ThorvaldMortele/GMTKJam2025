@@ -56,6 +56,9 @@ public class WordInputManager : MonoBehaviour
 
             inputText.text = currentInput.ToUpper();
         }
+
+        if (wordCombo <= 0)
+            wordCombo = 0;
     }
 
     public void TriggerBrainfart(float duration = 5f)
