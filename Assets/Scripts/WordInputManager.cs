@@ -14,7 +14,7 @@ public class WordInputManager : MonoBehaviour
     public List<Ability> Abilities;
     public List<string> ActiveTriggerWords = new List<string>();
     public List<WordSlotManager> SlotManagers;
-    public TextMeshProUGUI hintText; 
+    public TextMeshProUGUI hintText;
 
     public string currentInput = "";
     public bool CanInput = false;

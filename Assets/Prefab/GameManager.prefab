@@ -95,6 +95,8 @@ MonoBehaviour:
   wordSpacingDegrees: 5
   InputManager: {fileID: 8946174154608269716}
   MaxWordCountBeforeChainEnd: 15
+  TriggerWordColorInLoop: {r: 0.6784314, g: 0.79607844, b: 0.90588236, a: 1}
+  DefaultWordColorInLoop: {r: 0.90588236, g: 0.8117647, b: 0.6784314, a: 1}
   curvedWords: []
   firstWordFirstLetter: 
 --- !u!1 &4650782740287356847
@@ -401,6 +403,8 @@ MonoBehaviour:
   wordSpacingDegrees: 5
   InputManager: {fileID: 6848674831943434221}
   MaxWordCountBeforeChainEnd: 15
+  TriggerWordColorInLoop: {r: 0.6784314, g: 0.79607844, b: 0.90588236, a: 1}
+  DefaultWordColorInLoop: {r: 0.90588236, g: 0.8117647, b: 0.6784314, a: 1}
   curvedWords: []
   firstWordFirstLetter: 
 --- !u!1 &8260035422080450653

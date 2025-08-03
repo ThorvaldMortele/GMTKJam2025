@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -13,6 +15,8 @@ public class WordSlotManager : MonoBehaviour
     public float wordSpacingDegrees = 5f;
     public WordInputManager InputManager;
     public int MaxWordCountBeforeChainEnd = 15;
+    public Color TriggerWordColorInLoop; //ADCBE7
+    public Color DefaultWordColorInLoop;
 
     public List<CurvedWordDisplay> curvedWords = new();
     
@@ -33,22 +37,115 @@ public class WordSlotManager : MonoBehaviour
         if (wordCount >= 1 && word[^1].ToString().ToLower() == firstWordFirstLetter.ToLower())
         {
             Debug.Log("Loop completed!");
-            ResetChain();
 
-            OnLoopCompleted?.Invoke();
+            var wordObj = Instantiate(wordPrefab, wordParent);
+            var curved = wordObj.GetComponent<CurvedWordDisplay>();
+            curved.radius = baseRadius;
+            curved.SetWord(word, 0); // Temp angle
+
+            if (!isTriggerWord) //trigger words should be able to be used again over time, so no duplicate check
+            {
+                GameManager.Instance.AllUsedWords.Add(word);
+            }
+
+            curvedWords.Insert(0, curved);
+
+            if (wordCount == 1)
+                firstWordFirstLetter = word[0].ToString();
+
+            RecalculateLayout();
+
+            StartCoroutine(ShiftThenReset(true));
             return;
         }
 
         if (wordCount >= MaxWordCountBeforeChainEnd)
         {
             Debug.Log("Chain completed!");
-            ResetChain();
 
-            OnChainCompleted?.Invoke();
+            var wordObj = Instantiate(wordPrefab, wordParent);
+            var curved = wordObj.GetComponent<CurvedWordDisplay>();
+            curved.radius = baseRadius;
+            curved.SetWord(word, 0); // Temp angle
+
+            if (!isTriggerWord) //trigger words should be able to be used again over time, so no duplicate check
+            {
+                GameManager.Instance.AllUsedWords.Add(word);
+            }
+
+            curvedWords.Insert(0, curved);
+
+            if (wordCount == 1)
+                firstWordFirstLetter = word[0].ToString();
+
+            RecalculateLayout();
+
+            StartCoroutine(ShiftThenReset(false));
             return;
         }
 
         StartUpLoop(word, isTriggerWord);
+
+        foreach (var wordDisplay in curvedWords)
+        {
+            string displayText = wordDisplay.textField.text.ToLower().Trim();
+
+            if (InputManager.Abilities.Any(tw => tw.Name.ToLower().Trim() == displayText))
+            {
+                wordDisplay.textField.color = TriggerWordColorInLoop;
+            }
+            else
+            {
+                wordDisplay.textField.color = DefaultWordColorInLoop; // Reset non-trigger words
+            }
+        }
+
+        RecalculateLayout();
+    }
+
+    private IEnumerator ShiftThenReset(bool isloop)
+    {
+        yield return StartCoroutine(ShiftWordsLeftCoroutine(isloop));
+    }
+
+    public void ShiftWordsLeftUntilOffscreen(bool isloop)
+    {
+        StartCoroutine(ShiftWordsLeftCoroutine(isloop));
+    }
+
+    private IEnumerator ShiftWordsLeftCoroutine(bool isloop)
+    {
+        float shiftAmount = 20f;
+
+        while (true)
+        {
+            // Track starting angle
+            float startAngle = curvedWords[0].GetAngle();
+
+            // Apply tweens
+            foreach (var word in curvedWords)
+            {
+                float newAngle = word.GetAngle() + shiftAmount;
+                DOTween.To(() => word.GetAngle(), word.SetAngle, newAngle, 0.15f).SetEase(Ease.OutQuad);
+
+                float current2Angle = word.GetAngle();
+
+                if (current2Angle > 390f) word.ToggleWordVisible(0);
+            }
+
+            // Check again after tween
+            float currentAngle = curvedWords[0].GetAngle();
+            if (currentAngle > 390f)
+            {
+                ResetChain();
+                if (isloop) OnLoopCompleted?.Invoke();
+                else OnChainCompleted?.Invoke();
+                break;
+            }
+                
+            // Wait for tween to complete
+            yield return new WaitForSeconds(0.15f);
+        }
     }
 
     public void StartUpLoop(string word, bool isTriggerWord)

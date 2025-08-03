@@ -27,6 +27,6 @@ public class FishyAbility : AbilityEffectBase
             .ToList().OrderBy(_ => Random.value)
             .FirstOrDefault();
 
-        own.InputManager.SetHintText(hintword);
+        own.InputManager.SetHintText("Hint: " + hintword);
     }
 }
