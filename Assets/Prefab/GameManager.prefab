@@ -94,6 +94,7 @@ MonoBehaviour:
   baseRadius: 200
   wordSpacingDegrees: 5
   InputManager: {fileID: 8946174154608269716}
+  MaxWordCountBeforeChainEnd: 15
   curvedWords: []
   firstWordFirstLetter: 
 --- !u!1 &4650782740287356847
@@ -153,21 +154,31 @@ MonoBehaviour:
   DictionaryLoader: {fileID: 8931823230631955919}
   CPU: {fileID: 4960960699067596176}
   AbilitiesContainer: {fileID: 0}
-  AbilityPrefab: {fileID: 1075603856113955719, guid: ae3a8a9896588684bacfb663589119d3, type: 3}
+  AbilityPrefab: {fileID: 4365937166817188733, guid: 59a52e0cd67b04242879a859c7d29ed0, type: 3}
   CurrentActiveAbilityCards: []
   ActiveTriggerWords: []
   AllUsedWords: []
+  GameStarted: 0
   StartDelay: 3
+  PlayerScore: 0
   PlayerCompletedLoops: 0
+  PlayerCompletedChains: 0
   PlayerWordsCount: 0
   PlayerAbilitiesUsed: 0
+  CPUScore: 0
   CPUCompletedLoops: 0
+  CPUCompletedChains: 0
   CPUWordsCount: 0
   CPUAbilitiesUsed: 0
   startTime: 300
   currentTime: 0
   tmpTimerText: {fileID: 0}
   resultManager: {fileID: 0}
+  countdownText: {fileID: 0}
+  punchScale: 1.5
+  punchDuration: 0.3
+  AbilitySlotA: {fileID: 0}
+  AbilitySlotB: {fileID: 0}
 --- !u!1 &4744471348498223310
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,11 +262,11 @@ MonoBehaviour:
     Path: event:/WordEntered
   wordInputRemovedSFX:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 437830480
+      Data2: 1271110267
+      Data3: 1541359747
+      Data4: 1073880144
+    Path: event:/DeleteLetter
 --- !u!1 &5002987365193728633
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +318,7 @@ MonoBehaviour:
   MinDelayBetweenWords: 4
   MaxDelayBetweenWords: 8
   DelayWhenRethinking: 4
-  MaxWordCountToFormLoop: 12
+  MaxWordCountToFormLoop: 20
   triggerWordChance: 0.9
 --- !u!1 &6500099821541665495
 GameObject:
@@ -359,6 +370,7 @@ MonoBehaviour:
   baseRadius: 200
   wordSpacingDegrees: 5
   InputManager: {fileID: 6848674831943434221}
+  MaxWordCountBeforeChainEnd: 15
   curvedWords: []
   firstWordFirstLetter: 
 --- !u!1 &8260035422080450653

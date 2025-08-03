@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class GameManager : MonoBehaviour
     public WordInputManager wordInputManagerCPU;
     public DictionaryLoader DictionaryLoader;
     public CPUPlayer CPU;
-    public Transform AbilitiesContainer;
     public AbilityCardUIValueManager AbilityPrefab;
     public List<AbilityCardUIValueManager> CurrentActiveAbilityCards = new List<AbilityCardUIValueManager>();
     public List<string> ActiveTriggerWords = new List<string>();
@@ -51,6 +51,17 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI countdownText;
     public float punchScale = 1.5f;
     public float punchDuration = 0.3f;
+
+    [Header("Ability Card Slots")]
+    public Transform AbilitySlotA;
+    public Transform AbilitySlotB;
+
+    private AbilityCardUIValueManager cardInSlotA;
+    private AbilityCardUIValueManager cardInSlotB;
+
+    [SerializeField] private AbilitySticker slapStickerPrefab;
+    [SerializeField] private Transform playerStickerArea;
+    [SerializeField] private Transform cpuStickerArea;
 
     private void Awake()
     {
@@ -121,13 +132,20 @@ public class GameManager : MonoBehaviour
 
         var triggerWords = new List<string> { wordInputManager.Abilities[firstIndex].Name.ToLower(), wordInputManager.Abilities[secondIndex].Name.ToLower() };
 
-        foreach(string trigger in triggerWords)
+        for (int i = 0; i < triggerWords.Count; i++)
         {
-            var ability = wordInputManager.Abilities.Where(x => x.Name.ToLower() == trigger.ToLower()).FirstOrDefault();
-            var abilityCard = Instantiate(AbilityPrefab, AbilitiesContainer);
-            abilityCard.SetCardValue(ability.Name, ability.Description);
+            var abilityName = triggerWords[i];
+            var ability = wordInputManager.Abilities.FirstOrDefault(x => x.Name.ToLower() == abilityName);
 
-            CurrentActiveAbilityCards.Add(abilityCard);
+            Transform targetSlot = i == 0 ? AbilitySlotA : AbilitySlotB;
+            var cardGO = Instantiate(AbilityPrefab, targetSlot);
+            cardGO.transform.localPosition = Vector3.zero;
+            cardGO.SetCardValue(ability.Name, ability.Description);
+
+            if (i == 0) cardInSlotA = cardGO;
+            else cardInSlotB = cardGO;
+
+            CurrentActiveAbilityCards.Add(cardGO);
         }
 
         return triggerWords;
@@ -138,10 +156,22 @@ public class GameManager : MonoBehaviour
         if (wordInputManager.Abilities == null || wordInputManager.Abilities.Count < 2)
             throw new ArgumentException("List must contain at least 2 items.");
 
-        var usedAbilityCard = CurrentActiveAbilityCards.Where(x => x._abilityNameText.text.ToLower() == usedTriggerWord.ToLower()).FirstOrDefault();
+        var usedAbilityCard = CurrentActiveAbilityCards.FirstOrDefault(x => x._abilityNameText.text.ToLower() == usedTriggerWord.ToLower());
         CurrentActiveAbilityCards.Remove(usedAbilityCard);
-        Destroy(usedAbilityCard.gameObject);
         ActiveTriggerWords.Remove(usedTriggerWord.ToLower());
+
+        // Determine which slot to refill
+        Transform targetSlot = null;
+        if (usedAbilityCard == cardInSlotA)
+        {
+            cardInSlotA = null;
+            targetSlot = AbilitySlotA;
+        }
+        else if (usedAbilityCard == cardInSlotB)
+        {
+            cardInSlotB = null;
+            targetSlot = AbilitySlotB;
+        }
 
         var unusedAbilities = wordInputManager.Abilities
         .Select(a => a.Name.ToLower())
@@ -158,10 +188,20 @@ public class GameManager : MonoBehaviour
         string newTrigger = unusedAbilities[rng.Next(unusedAbilities.Count)];
         ActiveTriggerWords.Add(newTrigger);
 
-        var ability = wordInputManager.Abilities.Where(x => x.Name.ToLower() == newTrigger.ToLower()).FirstOrDefault();
-        var abilityCard = Instantiate(AbilityPrefab, AbilitiesContainer);
-        abilityCard.SetCardValue(ability.Name, ability.Description);
-        CurrentActiveAbilityCards.Add(abilityCard);
+        usedAbilityCard?.PlayDisappearAnimation(() =>
+        {
+            Destroy(usedAbilityCard.gameObject);
+
+            var ability = wordInputManager.Abilities.FirstOrDefault(x => x.Name.ToLower() == newTrigger);
+            var newCard = Instantiate(AbilityPrefab, targetSlot);
+            newCard.transform.localPosition = Vector3.zero;
+            newCard.SetCardValue(ability.Name, ability.Description);
+
+            if (targetSlot == AbilitySlotA) cardInSlotA = newCard;
+            else if (targetSlot == AbilitySlotB) cardInSlotB = newCard;
+
+            CurrentActiveAbilityCards.Add(newCard);
+        });
     }
 
     private void OnPlayerLoopCompleted()
@@ -230,6 +270,63 @@ public class GameManager : MonoBehaviour
             .Where(w => w.Length > 1)
             .OrderBy(_ => UnityEngine.Random.value)
             .FirstOrDefault() ?? "loop";
+    }
+
+    public void ShowAbilitySticker(string abilityName, bool onCPU, AbilityCardUIValueManager originCard)
+    {
+        Transform targetArea = onCPU ? cpuStickerArea : playerStickerArea;
+        Transform canvasRoot = targetArea.root; // Root canvas
+
+        // Spawn sticker under canvas root
+        var sticker = Instantiate(slapStickerPrefab, canvasRoot);
+        sticker.text.text = abilityName.ToUpper();
+        sticker.rectTransform.localScale = Vector3.one * 0.7f;
+        sticker.rectTransform.localRotation = Quaternion.identity;
+
+        // Get screen position of origin card
+        Vector2 screenStartPos = RectTransformUtility.WorldToScreenPoint(null, originCard._shakeTarget.position);
+
+        // Convert screen position to local position in canvas
+        Vector2 localStartPos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvasRoot as RectTransform,
+            screenStartPos,
+            null, // null because Screen Space - Overlay
+            out localStartPos
+        );
+        sticker.rectTransform.localPosition = localStartPos;
+
+        // Get screen position of the target area center
+        Vector2 screenTargetPos = RectTransformUtility.WorldToScreenPoint(null, targetArea.position);
+        Vector2 localTargetPos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvasRoot as RectTransform,
+            screenTargetPos,
+            null,
+            out localTargetPos
+        );
+
+        // Random slap rotation angle (e.g. -15° to 15°)
+        float slapAngle = UnityEngine.Random.Range(-15f, 15f);
+
+        // Animate slap
+        Sequence seq = DOTween.Sequence();
+
+        // Fly to target
+        seq.Append(sticker.rectTransform.DOLocalMove(localTargetPos, 0.25f).SetEase(Ease.OutQuad));
+        seq.Join(sticker.rectTransform.DOScale(Vector3.one * 1.2f, 0.25f));
+
+        // Slap impact: rotate + squash
+        seq.AppendCallback(() =>
+        {
+            sticker.rectTransform.localRotation = Quaternion.Euler(0f, 0f, slapAngle);
+        });
+        seq.Append(sticker.rectTransform.DOScale(new Vector3(1.2f, 0.6f, 1f), 0.07f).SetEase(Ease.OutCubic)); // squish
+        seq.Append(sticker.rectTransform.DOScale(Vector3.one, 0.1f).SetEase(Ease.OutBack)); // settle
+
+        // Hold, then fade
+        seq.AppendInterval(1f);
+        seq.OnComplete(() => Destroy(sticker.gameObject));
     }
 
     #region Timer
@@ -322,3 +419,5 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 }
+
+

@@ -144,6 +144,12 @@ public class WordInputManager : MonoBehaviour
     {
         if (ability?.Effect != null)
         {
+            bool slapCPU = target.IsCPU;
+            var originCard = GameManager.Instance.CurrentActiveAbilityCards
+            .FirstOrDefault(c => c._abilityNameText.text.ToLower() == ability.Name.ToLower());
+
+            GameManager.Instance.ShowAbilitySticker(ability.Name, slapCPU, originCard);
+
             ability.Effect.Apply(target, slotManager);
             GameManager.Instance.GenerateNewTriggerWord(ability.Name);
         }

@@ -15,7 +15,7 @@ public class CPUPlayer : MonoBehaviour
     public float MaxDelayBetweenWords = 2f;
     public float DelayWhenRethinking = 1f;
 
-    public int MaxWordCountToFormLoop = 12;
+    public int MaxWordCountToFormLoop = 20;
     private bool isStunned = false;
 
     [Range(0f, 1f)]
@@ -156,7 +156,7 @@ public class CPUPlayer : MonoBehaviour
             : "";
 
         int count = inputManager.slotManager.wordCount;
-        float closeChance = Mathf.Clamp01(count / 10f); // up to 100% at 10+ words
+        float closeChance = Mathf.Clamp01(count / MaxWordCountToFormLoop); // up to 100% at 10+ words
 
         bool shouldTryToClose = Random.value < closeChance;
 
