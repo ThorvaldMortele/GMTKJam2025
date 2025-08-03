@@ -291,7 +291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7792241065943751111
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6829,7 +6829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Chains:'
+  m_text: 'Abilities Used:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a77d942a798b4c14383067706463ceb7, type: 2}
   m_sharedMaterial: {fileID: -5448181931137440081, guid: a77d942a798b4c14383067706463ceb7, type: 2}
