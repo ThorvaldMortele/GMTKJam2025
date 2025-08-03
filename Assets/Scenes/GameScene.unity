@@ -366,16 +366,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2445374887354658977, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_Type
-      value: 0
+      propertyPath: m_Color.b
+      value: 0.21960786
       objectReference: {fileID: 0}
     - target: {fileID: 2445374887354658977, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: dccf07ea976f4f749a8baf287888c161, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21960786
+      objectReference: {fileID: 0}
     - target: {fileID: 2445374887354658977, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_Color.r
+      value: 0.32156864
       objectReference: {fileID: 0}
     - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -385,6 +385,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 374915742}
+    - target: {fileID: 4563287997926441580, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UILoopExplodeSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237212967080246794, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5859515956676711502, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -473,10 +481,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 374915742}
-    - target: {fileID: 6970008571150135059, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8804685144160696400, guid: 1e33e371b4baf3a458440739cf9c4305, type: 3}
       propertyPath: _gameManager
       value: 
@@ -693,10 +697,6 @@ PrefabInstance:
       propertyPath: feedbackText
       value: 
       objectReference: {fileID: 804231880}
-    - target: {fileID: 7504105128976028852, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: tmpTimerText
       value: 
@@ -713,90 +713,6 @@ PrefabInstance:
       propertyPath: AbilitiesContainer
       value: 
       objectReference: {fileID: 804231884}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: loopScoredSFX.Path
-      value: event:/LoopScored
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: chainScoredSFX.Path
-      value: event:/ChainScored
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: countdownTickSFX.Path
-      value: event:/CountdownTick
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: countdownStartSFX.Path
-      value: event:/GameStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: loopScoredSFX.Guid.Data1
-      value: -1774098482
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: loopScoredSFX.Guid.Data2
-      value: 1184966146
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: loopScoredSFX.Guid.Data3
-      value: 1308093104
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: loopScoredSFX.Guid.Data4
-      value: 2048667646
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: chainScoredSFX.Guid.Data1
-      value: -764198600
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: chainScoredSFX.Guid.Data2
-      value: 1220360497
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: chainScoredSFX.Guid.Data3
-      value: -1996599885
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: chainScoredSFX.Guid.Data4
-      value: 431916572
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: countdownTickSFX.Guid.Data1
-      value: 1998777420
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: countdownTickSFX.Guid.Data2
-      value: 1278515470
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: countdownTickSFX.Guid.Data3
-      value: -2011875158
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: countdownTickSFX.Guid.Data4
-      value: -1693895996
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: countdownStartSFX.Guid.Data1
-      value: -525829560
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: countdownStartSFX.Guid.Data2
-      value: 1196089170
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: countdownStartSFX.Guid.Data3
-      value: 879376003
-      objectReference: {fileID: 0}
-    - target: {fileID: 7909425159278121814, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: countdownStartSFX.Guid.Data4
-      value: 888217764
-      objectReference: {fileID: 0}
-    - target: {fileID: 8777747517815572786, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8946174154608269716, guid: f810b00399f3c16408e295b2f39a0b01, type: 3}
       propertyPath: hintText
       value: 

@@ -65,3 +65,10 @@ MonoBehaviour:
       Data3: 1108380583
       Data4: 293008213
     Path: event:/UIPopUp 2
+  explodeLoop:
+    Guid:
+      Data1: 644245919
+      Data2: 1250340669
+      Data3: -2073224570
+      Data4: -1985409793
+    Path: event:/ExplodeCurrentLoop

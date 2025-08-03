@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8318728937377051315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ExplodeCurrentLoop
+  m_EditorClassIdentifier: 
+  Path: event:/ExplodeCurrentLoop
+  Guid:
+    Data1: 644245919
+    Data2: 1250340669
+    Data3: -2073224570
+    Data4: -1985409793
+  Banks:
+  - {fileID: -2005577492349216657}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6348331146685667014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,10 +96,10 @@ MonoBehaviour:
   Path: FMOD/WordLoop/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638898239870028742
+  lastModified: 638898244823550669
   FileSizes:
   - Name: Desktop
-    Value: 1392
+    Value: 1490
   Exists: 1
 --- !u!114 &-3550083123011406483
 MonoBehaviour:
@@ -170,10 +197,10 @@ MonoBehaviour:
   Path: FMOD/WordLoop/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638898239869988683
+  lastModified: 638898244823500623
   FileSizes:
   - Name: Desktop
-    Value: 99648
+    Value: 115616
   Exists: 1
 --- !u!114 &-1386937385386727267
 MonoBehaviour:
@@ -256,12 +283,14 @@ MonoBehaviour:
   - {fileID: -2273709837195842277}
   - {fileID: 8495554401048856550}
   - {fileID: -6348331146685667014}
+  - {fileID: -8318728937377051315}
+  - {fileID: 4678465179718093710}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2005577492349216657}
   StringsBanks:
   - {fileID: -4890462348872955270}
-  cacheTime: 638898239870028742
+  cacheTime: 638898244823550669
   cacheVersion: 131625
 --- !u!114 &859600289650049722
 MonoBehaviour:
@@ -335,6 +364,33 @@ MonoBehaviour:
     Data2: 1296119932
     Data3: 1108380583
     Data4: 293008213
+  Banks:
+  - {fileID: -2005577492349216657}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4678465179718093710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AbilityUsedwoosh
+  m_EditorClassIdentifier: 
+  Path: event:/AbilityUsedwoosh
+  Guid:
+    Data1: -1244698435
+    Data2: 1136080180
+    Data3: 2048251047
+    Data4: -2003616810
   Banks:
   - {fileID: -2005577492349216657}
   IsStream: 0
