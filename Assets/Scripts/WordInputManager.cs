@@ -14,7 +14,7 @@ public class WordInputManager : MonoBehaviour
     public List<Ability> Abilities;
     public List<string> ActiveTriggerWords = new List<string>();
     public List<WordSlotManager> SlotManagers;
-    public TextMeshProUGUI hintText; 
+    public TextMeshProUGUI hintText;
 
     public string currentInput = "";
     public bool CanInput = false;
@@ -147,6 +147,12 @@ public class WordInputManager : MonoBehaviour
     {
         if (ability?.Effect != null)
         {
+            bool slapCPU = target.IsCPU;
+            var originCard = GameManager.Instance.CurrentActiveAbilityCards
+            .FirstOrDefault(c => c._abilityNameText.text.ToLower() == ability.Name.ToLower());
+
+            GameManager.Instance.ShowAbilitySticker(ability.Name, slapCPU, originCard);
+
             ability.Effect.Apply(target, slotManager);
             GameManager.Instance.GenerateNewTriggerWord(ability.Name);
         }
